@@ -154,11 +154,11 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
 6. Here is what you should see if everything was done correctly:
 
-   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/blob/Tutorial_0/ldc_raw.png)
+   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/Tutorial_0/ldc_raw.png)
 
    - In the next tutorial you will learn how visualize and edit the solution as follows:
 
-   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/blob/Tutorial_0/ldc_edit.png)
+   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/Tutorial_0/ldc_edit.png)
 
 &nbsp;
 
