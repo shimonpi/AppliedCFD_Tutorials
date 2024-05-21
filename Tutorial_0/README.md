@@ -1,18 +1,9 @@
 # Tutorial 0: Setting up WSL and OpenFOAM
 
-In this tutorial, you will learn how to install the **Windows Subsystem for Linux** (`wsl`) and **OpenFOAM** version 11 on your **Windows** system. 
-
-By following these steps, you will prepare your computer to use **OpenFOAM** for our upcoming simulations. Each step includes detailed instructions to make the installation process as smooth as possible, especially if you are new to working with **Linux** and terminal commands. 
-
-We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The `.org` version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the `.com` version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the `.org` version is more suitable due to its open access and extensive community support.
-
-**Note:** This guide is intended for **Windows** users. If you are using **macOS**, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
-
-&nbsp;
-
 ##  Table of Contents
 - [Tutorial 0: Setting up WSL and OpenFOAM](#tutorial-0-setting-up-wsl-and-openfoam)
   - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
   - [Setup](#setup)
     - [Step 1: Installing WSL](#step-1-installing-wsl)
     - [Step 2: Installing OpenFOAM](#step-2-installing-openfoam)
@@ -22,7 +13,17 @@ We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM
   - [Conclusion and Troubleshooting](#conclusion-and-troubleshooting)
   - [References](#references)
 
-&nbsp;
+## Introduction
+
+In this tutorial, you will learn how to install the **Windows Subsystem for Linux** (`wsl`) and **OpenFOAM** version 11 on your **Windows** system. 
+
+By following these steps, you will prepare your computer to use **OpenFOAM** for our upcoming simulations. Each step includes detailed instructions to make the installation process as smooth as possible, especially if you are new to working with **Linux** and terminal commands. 
+
+We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The `.org` version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the `.com` version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the `.org` version is more suitable due to its open access and extensive community support.
+
+> [!NOTE]
+> This guide is intended for **Windows** users. If you are using **macOS**, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
+
 
 ## Setup
 
@@ -52,8 +53,6 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows **W
      lsb_release -a
      ```
 
-&nbsp;
-
 ### Step 2: Installing OpenFOAM
 With your **Linux** set up, you are now ready to install **OpenFOAM**.
 
@@ -61,7 +60,6 @@ With your **Linux** set up, you are now ready to install **OpenFOAM**.
    - Update your **Linux** system's packages:
      ```
      sudo apt update
-     
      sudo apt full-upgrade -y
      ```
 2. Install dependencies required by **OpenFOAM**:
@@ -73,11 +71,8 @@ With your **Linux** set up, you are now ready to install **OpenFOAM**.
    - Use the following commands:
      ```
      sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key > /etc/apt/trusted.gpg.d/openfoam.asc"
-     
      sudo add-apt-repository http://dl.openfoam.org/ubuntu
-     
      sudo apt-get update
-     
      sudo apt-get -y install openfoam11
      ```
 4. Configure the **OpenFOAM** environment:
@@ -97,16 +92,12 @@ With your **Linux** set up, you are now ready to install **OpenFOAM**.
    - A "Usage" message should appear.
 6. Your installation and user configuration are complete.
 
-&nbsp;
-
 ### Step 3: Installing ParaView
 To visualize simulation results, you need to install **ParaView**. Since it's more stable on **Windows**, we recommend installing it directly.
 
 1. Download the latest version of **ParaView** (`.msi`) from [**ParaView**'s official website](https://www.paraview.org/).
 2. Install **ParaView** by following the on-screen instructions.
 3. Once installed, you can open **ParaView** from the **Start** menu.
-
-&nbsp;
 
 ### Step 4: Running a Test Case
 To ensure that your installation is functioning correctly, run a simple test case. The test case is taken from the tutorials directory which contains numerous example cases in **OpenFOAM**.
@@ -131,7 +122,6 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory. For instance, to try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
      ```
      cd $FOAM_RUN
-     
      cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
      ```
 4. Run the example case:
@@ -142,9 +132,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - Run the simulation by typing:
      ```
      blockMesh
-     
      foamRun
-     
      touch cavity.foam
      ```
 5. Post-process the results using **ParaView**:
@@ -154,13 +142,11 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
 6. Here is what you should see if everything was done correctly:
 
-   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/Tutorial_0/ldc_raw.png)
+   ![plot_ldc_raw](ldc_raw.png)
 
    - In the next tutorial you will learn how visualize and edit the solution as follows:
 
-   ![plot](https://github.com/shimonpi/AppliedCFD_Tutorials/Tutorial_0/ldc_edit.png)
-
-&nbsp;
+   ![plot_ldc_edit](ldc_edit.png)
 
 ### Clean Uninstall of WSL
 This section provides a clear guide for users who want to completely remove `wsl` from their system and start over.
@@ -181,7 +167,6 @@ This section provides a clear guide for users who want to completely remove `wsl
    - If "Linux" does not appear in the list, open `PowerShell` as "Administrator" and use `winget` to find and uninstall it:
      ```
      winget list
-     
      winget uninstall --name "Windows Subsystem for Linux" 
      ```
 3. Uninstall WSL components:
@@ -213,8 +198,6 @@ This section provides a clear guide for users who want to completely remove `wsl
      ```
    - These steps ensure your system remains clean and functional after uninstalling `wsl`.
 
-&nbsp;
-
 ## Conclusion and Troubleshooting
 Congratulations! 
 
@@ -222,7 +205,6 @@ You should now have a functional **OpenFOAM** installation on your **Windows** m
 
 Happy computing!
 
-&nbsp;
 
 ## References
 [https://openfoam.org/download/windows/](https://openfoam.org/download/windows/)
@@ -230,9 +212,3 @@ Happy computing!
 [https://openfoam.org/download/11-ubuntu/#getting-started](https://openfoam.org/download/11-ubuntu/#getting-started)
 
 [https://doc.cfd.direct/openfoam/user-guide-v11/tutorials](https://doc.cfd.direct/openfoam/user-guide-v11/tutorials)
-
-
-
-
-
-&nbsp;
