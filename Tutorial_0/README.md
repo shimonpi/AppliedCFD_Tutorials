@@ -1,8 +1,6 @@
 # Tutorial 0: Setting up WSL and OpenFOAM
 
-##  Table of Contents
 - [Tutorial 0: Setting up WSL and OpenFOAM](#tutorial-0-setting-up-wsl-and-openfoam)
-  - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Setup](#setup)
     - [Step 1: Installing WSL](#step-1-installing-wsl)
