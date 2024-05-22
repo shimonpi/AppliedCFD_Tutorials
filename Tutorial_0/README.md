@@ -22,7 +22,6 @@ We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM
 > [!NOTE]
 > This guide is intended for **Windows** users. If you are using **macOS**, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
 
-
 ## Setup
 
 ### Step 1: Installing WSL
@@ -47,7 +46,7 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows **W
    - Follow the prompts to set up your new user account and password.
 6. Confirm the installation:
    - Verify that **Ubuntu 22.04 LTS** was installed by typing in the **Linux** terminal:
-     ```
+     ```bash
      lsb_release -a
      ```
 
@@ -56,18 +55,18 @@ With your **Linux** set up, you are now ready to install **OpenFOAM**.
 
 1. Update your **Linux** system's packages:
    - Update your **Linux** system's packages:
-     ```
+     ```bash
      sudo apt update
      sudo apt full-upgrade -y
      ```
 2. Install dependencies required by **OpenFOAM**:
    - Run:
-     ```
+     ```bash
      sudo apt-get install build-essential
      ```
 3. Download and install **OpenFOAM**:
    - Use the following commands:
-     ```
+     ```bash
      sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key > /etc/apt/trusted.gpg.d/openfoam.asc"
      sudo add-apt-repository http://dl.openfoam.org/ubuntu
      sudo apt-get update
@@ -75,16 +74,16 @@ With your **Linux** set up, you are now ready to install **OpenFOAM**.
      ```
 4. Configure the **OpenFOAM** environment:
    - Add to your `.bashrc`:
-     ```
+     ```bash
      echo ". /opt/openfoam11/etc/bashrc" >> $HOME/.bashrc
      ```
    - Refresh the environment variables (note the dot):
-     ```
+     ```bash
      . $HOME/.bashrc
      ```
 5. Confirm the installation:
    - Verify that **OpenFOAM** was installed correctly by running:
-     ```
+     ```bash
      foamRun -help
      ```
    - A "Usage" message should appear.
@@ -103,32 +102,32 @@ To ensure that your installation is functioning correctly, run a simple test cas
 1. Explore the example cases:
    - The tutorials directory location is represented by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment.
    - List the top-level contents of the `$FOAM_TUTORIALS` directory by typing in a terminal:
-     ```
+     ```bash
      ls $FOAM_TUTORIALS
      ```
 2. Prepare your run directory:
    - The **OpenFOAM** environment includes a `$FOAM_RUN` variable which represents a directory in the user's file system at `$HOME/OpenFOAM/<USER>-11/run` where `<USER>` is the account login name and `11` is the **OpenFOAM** version number. This directory is the recommended location to store and run simulation cases.
    - Create the `run` directory by typing:
-     ```
+     ```bash
      mkdir -p $FOAM_RUN
      ```
    - Check if the directory exists by typing:
-     ```
+     ```bash
      ls $FOAM_RUN
      ```
 3. Copy an example case:
    - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory. For instance, to try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
-     ```
+     ```bash
      cd $FOAM_RUN
      cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
      ```
 4. Run the example case:
    - Navigate to the cavity directory:
-     ```
+     ```bash
      cd cavity
      ```
    - Run the simulation by typing:
-     ```
+     ```bash
      blockMesh
      foamRun
      touch cavity.foam
@@ -136,7 +135,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
 5. Post-process the results using **ParaView**:
    - Copy the files from the `wsl` directory to a location in your **Windows** filesystem. This step might be necessary because **ParaView** on **Windows** might not have direct access to files within the `wsl` environment.
    - Launch **ParaView** on your **Windows** machine.
-   - Use the "File -> Open" menu to navigate to the copied case files on your **Windows** filesystem and open the file with the extension `.foam`.
+   - Use the "File &rarr; Open" menu to navigate to the copied case files on your **Windows** filesystem and open the file with the extension `.foam`.
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
 6. Here is what you should see if everything was done correctly:
 
@@ -147,6 +146,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
    ![plot_ldc_edit](ldc_edit.png)
 
 ### Clean Uninstall of WSL
+
 This section provides a clear guide for users who want to completely remove `wsl` from their system and start over.
 
 1. Uninstall your **Linux** distribution:
@@ -160,9 +160,9 @@ This section provides a clear guide for users who want to completely remove `wsl
      wsl --unregister <DistroName>
      ```
 2. Remove Ubuntu and Linux from Apps & Features:
-   - Press `Win + I` to open "Settings", then navigate to "Apps > Apps & Features".
+   - Press `Win + I` to open "Settings", then navigate to "Apps &rarr; Apps & Features".
    - Search for "Ubuntu" and for "Linux" in the list, select it, and click "Uninstall".
-   - If "Linux" does not appear in the list, open `PowerShell` as "Administrator" and use `winget` to find and uninstall it:
+   - If "Linux" does not appear in the list, open `PowerShell` and use `winget` to find and uninstall it:
      ```
      winget list
      winget uninstall --name "Windows Subsystem for Linux" 
@@ -178,33 +178,22 @@ This section provides a clear guide for users who want to completely remove `wsl
       dism.exe /online /disable-feature /featurename:VirtualMachinePlatform /norestart
       ```
    - Restart your computer to complete the uninstallation process.
-4. For maintaining the health of your machine, it is recommended to run the following commands:
-   - Clean up component store:
-     ```
-     dism.exe /online /cleanup-image /startcomponentcleanup
-     ```
-   - Repair system files:
-     ```
-     dism.exe /online /cleanup-image /restorehealth
-     ```
-   - Check `%LOCALAPPDATA%\Packages` and delete any leftover directories related to your `wsl` distribution.
-   - Run disk cleanup by pressing `Win + R`, typing "cleanmgr", and pressing "Enter".
-   - Run disk optimization by searching for "Defragment and Optimize Drives".
-   - Verify System Integrity:
-     ```
-     sfc /scannow
-     ```
-   - These steps ensure your system remains clean and functional after uninstalling `wsl`.
+> [!TIP]
+> For maintaining the health of your machine, it is recommended to run the following commands:
+> - Clean up component store: `dism.exe /online /cleanup-image /startcomponentcleanup`
+> - Repair system files: `dism.exe /online /cleanup-image /restorehealth`
+> - Run disk cleanup by pressing `Win + R`, typing "cleanmgr", and pressing "Enter".
+> - Run disk optimization by searching for "Defragment and Optimize Drives".
+> - Verify System Integrity: `sfc /scannow`
 
 ## Conclusion and Troubleshooting
-Congratulations! 
 
 You should now have a functional **OpenFOAM** installation on your **Windows** machine, along with the ability to visualize results using **ParaView**. As you begin working with **OpenFOAM**, remember that learning to troubleshoot and solve problems is a valuable skill in computational engineering. Should you encounter issues, revisit the steps to ensure all commands were entered correctly. For further assistance, don’t hesitate to consult with the course TA or refer to the **OpenFOAM** community forums. By following this guide, you’re well on your way to performing complex fluid dynamics simulations. 
 
 Happy computing!
 
-
 ## References
+
 [https://openfoam.org/download/windows/](https://openfoam.org/download/windows/)
 
 [https://openfoam.org/download/11-ubuntu/#getting-started](https://openfoam.org/download/11-ubuntu/#getting-started)
