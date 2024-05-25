@@ -116,9 +116,7 @@ Having established the importance of the lid-driven cavity problem as a benchmar
 &nbsp;
 
 <div style="background-color: Navy; padding: 10px; border-radius: 8px; text-align: center;">
-    <a href="Tutorial_1//Tutorial_1_2/README.md" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
+    <a href="https://github.com/shimonpi/AppliedCFD_Tutorials/tree/d6149f012dd118db1c826ba39e459d5eaaf9a46a/Tutorial_1/Tutorial_1_2" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
         Tutorial 1.2 - Setting Up the Lid-Driven Cavity Problem in OpenFOAM
     </a>
 </div>
-
-

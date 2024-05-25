@@ -230,7 +230,7 @@ The benchmark data we are using for comparison comes from the study by [Ghia, Gh
    ![paraview_plot_line2](paraview_plot_line2.png)
 
 2. Load benchmark data:
-   - Load the benchmark data file "Re100_xcenter.csv" which contains the data for "U_x" at the vertical center line in the cavity using "File &rarr; Open". 
+   - Load the benchmark data file [Re100_xcenter.csv](Re100_xcenter.csv) which contains the data for "U_x" at the vertical center line in the cavity using "File &rarr; Open". 
    - Press "Apply" in the properties window that pops up.
 3. Compare data:
    - Close the table window that opens, and in the pipeline browser, click on the eyeball icon near the "Re100_xcenter.csv" line to display it.

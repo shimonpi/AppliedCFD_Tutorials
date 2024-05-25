@@ -371,7 +371,7 @@ Having prepared and reviewed all necessary files, it's time to progress to runni
 &nbsp;
 
 <div style="background-color: Navy; padding: 10px; border-radius: 8px; text-align: center;">
-    <a href="Tutorial_1/Tutorial_1_3/README.md" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
+    <a href="https://github.com/shimonpi/AppliedCFD_Tutorials/tree/d6149f012dd118db1c826ba39e459d5eaaf9a46a/Tutorial_1/Tutorial_1_3" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
         Tutorial 1.3 - Running the Lid-Driven Cavity Simulation in OpenFOAM
     </a>
 </div>
