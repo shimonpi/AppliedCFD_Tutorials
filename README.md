@@ -5,7 +5,8 @@ Welcome to the Applied Computational Fluid Dynamics (CFD) Tutorials repository. 
 1. [Tutorial 0: Setting up WSL and OpenFOAM](Tutorial_0/README.md)
    
    Learn how to install the **Windows Subsystem for Linux** (`wsl`) and **OpenFOAM** on your **Windows** machine. This tutorial includes step-by-step instructions to ensure a smooth installation process, especially for beginners.
-2. Tutorial 1: Basic Case Setup
+2. Tutorial 1A: Basic Case Setup   
+   Tutorial 1B: 
 
    Dive into setting up your first CFD simulation case. This tutorial covers the initial steps of preparing the lid-driven cavity benchmark case, running it, and visualizing the results using **ParaView**.
 
