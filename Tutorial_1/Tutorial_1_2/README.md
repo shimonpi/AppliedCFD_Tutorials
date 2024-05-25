@@ -223,7 +223,7 @@ In the file you'll see several sections:
        alt="Albuquerque, New Mexico">
    <figcaption>
 
-   Figure: Block structure of the mesh for the cavity [[openfoam.com](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow)].
+   Figure: Block structure of the mesh for the cavity [openfoam.com](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow).
 
    </figcaption>
    </figure>
