@@ -17,7 +17,7 @@
   - [References](#references)
 
 ## Introduction
-In this part of the tutorial, you will run the lid-driven cavity (LDC) simulation set up in [Tutorial 1.2](/Tutorial_1/Tutorial_1_2/README.md). You will also learn how to monitor the simulation progress and understand the computational processes involved. Finally, we will discuss post-processing techniques to visualize and analyze the results.
+In this part of the tutorial, you will run the lid-driven cavity (LDC) simulation set up in [Tutorial 1.2](../Tutorial_1/Tutorial_1_2/README.md). You will also learn how to monitor the simulation progress and understand the computational processes involved. Finally, we will discuss post-processing techniques to visualize and analyze the results.
 
 ## Running the Simulation
 To start the simulation, follow these steps:

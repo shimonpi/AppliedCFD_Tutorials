@@ -24,7 +24,7 @@
 
 ## Introduction
 
-In [Tutorial 0](/Tutotiral_0/README.md), we ran the lid-driven cavity (LDC) case, which is one of the many pre-configured tutorials that **OpenFOAM** provides. The directory where these tutorials are located is indicated by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment. To list the top-level contents of the `$FOAM_TUTORIALS` directory, type the following command in your Linux terminal:
+In [Tutorial 0](../Tutotiral_0/README.md), we ran the lid-driven cavity (LDC) case, which is one of the many pre-configured tutorials that **OpenFOAM** provides. The directory where these tutorials are located is indicated by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment. To list the top-level contents of the `$FOAM_TUTORIALS` directory, type the following command in your Linux terminal:
 
 ```bash
 ls $FOAM_TUTORIALS
