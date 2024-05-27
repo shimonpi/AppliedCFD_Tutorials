@@ -41,15 +41,15 @@ The flow inside the cavity is governed by the incompressible Navier-Stokes equat
 \nabla \cdot \textbf{u} = 0 
 ``` 
 
-This equation ensures the conservation of mass in the flow field, where $\textbf{u}$ is the velocity vector.
+This equation ensures the conservation of mass in the flow field, where $`\textbf{u}`$ is the velocity vector.
 
 ### Momentum Equations
 
-$$
+```math
 \rho(\frac{\partial \textbf{u}}{\partial t} + (\textbf{u} \cdot \nabla) \textbf{u}) = -\nabla p + \mu \nabla^2 \textbf{u}
-$$
+```
 
-These equations represent the conservation of momentum, where $\rho$ is the fluid density $\textbf{u}$ is the velocity vector, $t$ is time, $p$ is the pressure, $\mu$ is the dynamic viscosity.
+These equations represent the conservation of momentum, where $`\rho`$ is the fluid density $`\textbf{u}`$ is the velocity vector, $`t`$ is time, $`p`$ is the pressure, $`\mu`$ is the dynamic viscosity.
 
 ### Assumptions
 
@@ -58,7 +58,7 @@ To simplify the problem, we make the following assumptions:
 2. Newtonian Fluid: The fluid viscosity remains constant, and the fluid follows Newton's law of viscosity.
 3. No-slip Condition: The fluid velocity at the stationary walls is zero, and at the moving lid, it matches the lid's velocity.
 4. Laminar Flow: The Reynolds number is low enough to avoid turbulence, ensuring a smooth and stable flow.
-5. Steady-State Flow: We focus on the steady-state solution where the flow does not change with time, meaning the time derivative term $\frac{\partial \textbf{u}}{\partial t}$ is set to zero.
+5. Steady-State Flow: We focus on the steady-state solution where the flow does not change with time, meaning the time derivative term $`\frac{\partial \textbf{u}}{\partial t}`$ is set to zero.
 
 ## Nondimensionalization
 
@@ -68,19 +68,19 @@ Let’s explore how you can use nondimensionalization to simplify this process a
 
 Nondimensionalization involves converting key physical quantities into dimensionless forms, which helps abstract the problem from specific physical scales and conditions:
 
-1. Velocity: $\textbf{u}^* = \frac{\textbf{u}}{U}$, where $U$ is a reference velocity. 
-2. Pressure: $p^* = \frac{p}{\rho U^2}$, relating to fluid density $\rho$.
-3. Spatial dimensions: $\textbf{r}^* = \frac{\textbf{r}}{L}$, $L$ being a characteristic length, affecting the gradient operator $\nabla^* = L\nabla$.
+1. Velocity: $`\textbf{u}^* = \frac{\textbf{u}}{U}`$, where $`U`$ is a reference velocity. 
+2. Pressure: $`p^* = \frac{p}{\rho U^2}`$, relating to fluid density $`\rho`$.
+3. Spatial dimensions: $`\textbf{r}^* = \frac{\textbf{r}}{L}`$, $`L`$ being a characteristic length, affecting the gradient operator $`\nabla^* = L\nabla`$.
 
 These adjustments lead to a dimensionless form of the momentum equation:
 
-$$
+```math
 (\textbf{u}^* \cdot \nabla^*) \textbf{u}^* = -\nabla p^{*} + \frac{1}{Re} \nabla^{*2} \textbf{u}^{*}
-$$
+```
 
-Here, $Re$ represents the Reynolds number ($Re = \frac{\rho UL}{\mu}$). This number is pivotal as it indicates the relative significance of inertial forces compared to viscous forces in fluid flow. As the Reynolds number increases, the relative influence of the viscous term diminishes compared to the inertial term. This shift indicates a transition toward flow regimes where inertial effects dominate, such as in high-speed flows or turbulent conditions. The inertial term’s nonlinearity contrasts with the linearity of the viscous term, thus an increase in Reynolds number leads to more nonlinear behavior in the fluid flow.
+Here, $`Re`$ represents the Reynolds number ($`Re = \frac{\rho UL}{\mu}`$). This number is pivotal as it indicates the relative significance of inertial forces compared to viscous forces in fluid flow. As the Reynolds number increases, the relative influence of the viscous term diminishes compared to the inertial term. This shift indicates a transition toward flow regimes where inertial effects dominate, such as in high-speed flows or turbulent conditions. The inertial term’s nonlinearity contrasts with the linearity of the viscous term, thus an increase in Reynolds number leads to more nonlinear behavior in the fluid flow.
 
-When utilizing codes for CFD simulations, it's important to note that most of them are programmed to solve the dimensional governing equations directly. However, when employing benchmark cases that use nondimensional variables for comparison and validation, you need to adjust the material properties within your simulations to mimic the behavior of solving nondimensional equations. In the dimensionless momentum equation the coefficient before the inertial term $(\textbf{u}^* \cdot \nabla^*) \textbf{u}^*$ is 1, suggesting that we should set the density $\rho$ to 1 in our simulation's material properties. Similarly, the coefficient of the viscous term $\nabla^{*2} \textbf{u}^*$ is $\frac{1}{Re}$, indicating the need to set the viscosity $\mu$ in correlation to the Reynolds number $Re$.
+When utilizing codes for CFD simulations, it's important to note that most of them are programmed to solve the dimensional governing equations directly. However, when employing benchmark cases that use nondimensional variables for comparison and validation, you need to adjust the material properties within your simulations to mimic the behavior of solving nondimensional equations. In the dimensionless momentum equation the coefficient before the inertial term $`(\textbf{u}^* \cdot \nabla^*) \textbf{u}^*`$ is 1, suggesting that we should set the density $\rho$ to 1 in our simulation's material properties. Similarly, the coefficient of the viscous term $`\nabla^{*2} \textbf{u}^*`$ is $`\frac{1}{Re}`$, indicating the need to set the viscosity $`\mu`$ in correlation to the Reynolds number $`Re`$.
 
 By carefully adjusting the input parameters in **OpenFOAM** to align with the nondimensionalized equations used in your benchmark cases, you can effectively simulate and study various fluid dynamics scenarios under controlled and comparable conditions. This approach not only facilitates a more profound understanding of fluid behavior across different scenarios but also ensures that your simulations are robust, reliable, and directly comparable to established benchmarks. 
 

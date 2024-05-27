@@ -89,7 +89,7 @@ cavity2d
 ```
 
 Each directory plays a crucial role in defining the setup and execution of **OpenFOAM** simulations:
-1. "0": This directory holds the setup files for primary field variables such as velocity ($U$), pressure ($p$), and any other scalar or vector fields relevant to the simulation. Each file represents a different variable and specifies initial conditions and boundary conditions for that variable.
+1. "0": This directory holds the setup files for primary field variables such as velocity ($`U`$), pressure ($`p`$), and any other scalar or vector fields relevant to the simulation. Each file represents a different variable and specifies initial conditions and boundary conditions for that variable.
 2. "constant": This directory stores data that remains constant throughout the simulation, including physical properties of the fluids ("physicalProperties"), the thermodynamic properties, and the mesh ("polyMesh").
 3. "system": This directory holds configuration files that control the simulation's execution. These files define the solver settings, discretization schemes, and algorithms used during the run.
 
@@ -124,15 +124,15 @@ Each property in the "physicalProperties" is associated with a set of dimensions
 [mass (kg), length (m), time (s), temperature (K), moles (mol), current (A),  luminousIntensity (cd)]
 ```
 
-"nu" is the kinematic viscosity ($\nu$) which is the ratio between the dynamic viscosity and the density of a fluid. The SI unit of the kinematic viscosity is $\frac{m^2}{s}$, thus the length is set to 2 and the time to -1. 
+"nu" is the kinematic viscosity ($`\nu`$) which is the ratio between the dynamic viscosity and the density of a fluid. The SI unit of the kinematic viscosity is $`\frac{m^2}{s}`$, thus the length is set to 2 and the time to -1. 
 
-From the previous discussion on nondimensionalization, you're aware that when dealing with nondimensional forms of the transport equations, $\nu$ can be represented as the reciprocal of the required $Re$ ($\rho=1$ and $\mu=\frac{1}{Re}$). To adjust $\nu$ according to a specific $Re$, you would calculate the desired $Re$ and set $\nu$ accordingly:
+From the previous discussion on nondimensionalization, you're aware that when dealing with nondimensional forms of the transport equations, $\nu$ can be represented as the reciprocal of the required $`Re`$ ($`\rho=1$ and $\mu=\frac{1}{Re}`$). To adjust $`\nu`$ according to a specific $`Re`$, you would calculate the desired $`Re`$ and set $`\nu`$ accordingly:
 
 ```cpp
 nu              [0 2 -1 0 0 0 0] 1/Re;
 ```
 
-In out case we have $\nu=0.01$, thus $Re = 100$.
+In out case we have $`\nu=0.01`$, thus $`Re = 100`$.
 
 Save and exit.
 
@@ -157,7 +157,7 @@ Open the "U" file, and you will see the following:
 
 ![U_orig](U_orig.png)
 
-The units for velocity are represented as $\frac{m}{s}$, with length set to 1 and time to -1. 
+The units for velocity are represented as $`\frac{m}{s}`$, with length set to 1 and time to -1. 
 
 Velocity in **OpenFOAM** is a vector field, represented by three components corresponding to x, y, and z directions in the Cartesian coordinate system. This representation allows for the specification of flow direction and magnitude across three-dimensional space. 
 
@@ -177,7 +177,7 @@ Next, examine the "p" (pressure) file, which establishes the initial and boundar
 
 ![p_orig](p_orig.png)
 
-Note that the dimensions specified in the file are $\frac{m^2}{s^{-2}}$, which are not typical dimensions for pressure. This is because the pressure field managed within the solver is not absolute pressure but a modified version: pressure divided by density ($\frac{p}{\rho}$). This modification simplifies the momentum equations and proves particularly beneficial in simulations involving constant density (i.e., incompressible flows). 
+Note that the dimensions specified in the file are $`\frac{m^2}{s^{-2}}`$, which are not typical dimensions for pressure. This is because the pressure field managed within the solver is not absolute pressure but a modified version: pressure divided by density ($`\frac{p}{\rho}`$). This modification simplifies the momentum equations and proves particularly beneficial in simulations involving constant density (i.e., incompressible flows). 
 
 Boundary conditions for the walls are set to zero-gradient, and at the start of the simulation, the entire domain's internal pressure is initialized to zero.
 
