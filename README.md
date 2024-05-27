@@ -18,6 +18,3 @@ To get started, begin with [Tutorial 0: Setting up WSL and OpenFOAM](Tutorial_0/
 
 ## Contributing
 We welcome contributions to enhance these tutorials. If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
-
-   
-

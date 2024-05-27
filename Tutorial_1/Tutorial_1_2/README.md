@@ -367,11 +367,3 @@ Having prepared and reviewed all necessary files, it's time to progress to runni
 [https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem](https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem)   
 [https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem](https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem)   
 [https://www.thevisualroom.com/27_openfoam_tutorials_opencfd/01_lid_driven_cavity/lid_driven_cavity.html](https://www.thevisualroom.com/27_openfoam_tutorials_opencfd/01_lid_driven_cavity/lid_driven_cavity.html)   
-
-&nbsp;
-
-<div style="background-color: Navy; padding: 10px; border-radius: 8px; text-align: center;">
-    <a href="https://github.com/shimonpi/AppliedCFD_Tutorials/tree/d6149f012dd118db1c826ba39e459d5eaaf9a46a/Tutorial_1/Tutorial_1_3/README.md" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
-        Tutorial 1.3 - Running the Lid-Driven Cavity Simulation in OpenFOAM
-    </a>
-</div>
