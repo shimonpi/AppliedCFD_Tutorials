@@ -75,7 +75,7 @@ Nondimensionalization involves converting key physical quantities into dimension
 These adjustments lead to a dimensionless form of the momentum equation:
 
 $$
-(\textbf{u}^* \cdot \nabla^*) \textbf{u}^* = -\nabla p^* + \frac{1}{Re} \nabla^{*2} \textbf{u}^*
+(\textbf{u}^* \cdot \nabla^*) \textbf{u}^* = -\nabla p^{*} + \frac{1}{Re} \nabla^{*2} \textbf{u}^{*}
 $$
 
 Here, $Re$ represents the Reynolds number ($Re = \frac{\rho UL}{\mu}$). This number is pivotal as it indicates the relative significance of inertial forces compared to viscous forces in fluid flow. As the Reynolds number increases, the relative influence of the viscous term diminishes compared to the inertial term. This shift indicates a transition toward flow regimes where inertial effects dominate, such as in high-speed flows or turbulent conditions. The inertial term’s nonlinearity contrasts with the linearity of the viscous term, thus an increase in Reynolds number leads to more nonlinear behavior in the fluid flow.
@@ -88,8 +88,8 @@ By carefully adjusting the input parameters in **OpenFOAM** to align with the no
 
 The lid-driven cavity problem has been extensively studied both for laminar and turbulent flows, with various numerical techniques applied to compute these solutions. A pivotal source of benchmark data for this problem comes from the study by [Ghia, Ghia, and Shin (1982)](https://www.sciencedirect.com/science/article/abs/pii/0021999182900584), which provides detailed tabular results across a range of Reynolds numbers. These results are crucial for verifying the accuracy of CFD simulations, ensuring that the software can replicate well-established outcomes.
 
- <details>
- <summary> Tabular results for various of Reynolds numbers by Ghia, Ghia, and Shin (1982). </summary>
+<details>
+<summary> Tabular results for various of Reynolds numbers by Ghia, Ghia, and Shin (1982). </summary>
 &nbsp;
 
 ![ghia_x05](ghia_x05.png) ![ghia_y05](ghia_y05.png)
@@ -99,7 +99,7 @@ The lid-driven cavity problem has been extensively studied both for laminar and 
 Further validation can be achieved by comparing our results with those generated using other advanced CFD tools, such as **[COMSOL](https://www.comsol.com/)**. COMSOL has documented its approach to solving the [lid-driven cavity problem](https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem), providing another layer of benchmarking data.
 
 <details>
- <summary> COMSOL simulation results for Reynold number 100 and 10,000. </summary>
+<summary> COMSOL simulation results for Reynold number 100 and 10,000. </summary>
 &nbsp;
 
 ![comsol_re100](comsol_re100.png) ![comsol_re10000](comsol_re10000.png)   
@@ -116,7 +116,7 @@ Having established the importance of the lid-driven cavity problem as a benchmar
 &nbsp;
 
 <div style="background-color: Navy; padding: 10px; border-radius: 8px; text-align: center;">
-    <a href="https://github.com/shimonpi/AppliedCFD_Tutorials/tree/d6149f012dd118db1c826ba39e459d5eaaf9a46a/Tutorial_1/Tutorial_1_2" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
+  <a href="https://github.com/shimonpi/AppliedCFD_Tutorials/tree/d6149f012dd118db1c826ba39e459d5eaaf9a46a/Tutorial_1/Tutorial_1_2" style="text-decoration: none; color: White; font-size: 14px; font-weight: bold; cursor: pointer;">
         Tutorial 1.2 - Setting Up the Lid-Driven Cavity Problem in OpenFOAM
-    </a>
+  </a>
 </div>
