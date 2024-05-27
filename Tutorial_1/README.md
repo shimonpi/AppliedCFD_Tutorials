@@ -37,9 +37,9 @@ The flow inside the cavity is governed by the incompressible Navier-Stokes equat
 
 ### Continuity Equation
 
-$$
+```math
 \nabla \cdot \textbf{u} = 0 
-$$ 
+``` 
 
 This equation ensures the conservation of mass in the flow field, where $\textbf{u}$ is the velocity vector.
 
