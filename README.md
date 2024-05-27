@@ -8,8 +8,8 @@ Welcome to the Applied Computational Fluid Dynamics (CFD) Tutorials repository. 
 
 2. Tutorial 1: Basic Case Setup - Lid-Driven Cavity (LDC) 
    - [Tutorial 1.1 – Introduction to CFD Concepts and OpenFOAM](Tutorial_1/README.md)
-   - [Tutorial 1.2 - Setting Up the LDC Problem in OpenFOAM](Tutorial_1/Tutorial_1_2/README.md)
-   - [Tutorial 1.3 - Running the LDC Simulation in OpenFOAM](Tutorial_1/Tutorial_1_3/README.md)
+   - [Tutorial 1.2 - Setting Up the LDC Problem](Tutorial_1/Tutorial_1_2/README.md)
+   - [Tutorial 1.3 - Running the LDC Simulation](Tutorial_1/Tutorial_1_3/README.md)
    
    Dive into setting up your first CFD simulation case. This tutorial covers the initial steps of preparing the lid-driven cavity benchmark case abd running it in **OpenFOAM**, and visualizing the results using **ParaView**.
 
