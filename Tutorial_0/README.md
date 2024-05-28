@@ -158,12 +158,12 @@ To ensure that your installation is functioning correctly, run a simple test cas
      touch cavity.foam
      ```
 5. Post-process the results using **ParaView**:
-   - Copy the files from the `wsl` directory to a location in your Windows filesystem. This step might be necessary because **ParaView** on Windows might not have direct access to files within the `wsl` environment.
-     - Open the directory in Windows:
+   - To use **ParaView** on Windows with files from your `wsl` environment, you need to copy the necessary files to a location in your Windows filesystem. This step ensures **ParaView** can access these files.
+     - Open the current directory in `Windows File Explorer` from the Linux terminal:
        ```bash
        explorer.exe .
        ```
-       This command will open the current directory in the `Windows File Explorer`, allowing you to easily locate the cavity case directory.
+     - Copy the cavity case directory from the `wsl` directory to a location in your Windows filesystem. For example, you can copy it to your "Documents" folder on Windows. This will make it accessible to **ParaView** running on Windows.
    - Launch **ParaView** on your Windows machine.
    - Use the "File &rarr; Open" menu to navigate to the copied case files on your Windows filesystem and open the file with the extension `.foam`.
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
