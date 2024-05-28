@@ -45,11 +45,11 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Win
    - After restarting, the Linux distribution terminal window should pop up automatically. If not, launch the new Linux terminal via the "Start" menu or by typing its name in `PowerShell` or `Command Prompt` (in our case "Ubuntu").
    - Follow the prompts to set up your new user account and password.
 
-    > [!NOTE] 
-    > When setting up your user account, the password will not appear on the Terminal window as you type it. This is a security feature. Just enter your password and press <kbd>Enter</kbd>.
+> [!NOTE] 
+> When setting up your user account, the password will not appear on the Terminal window as you type it. This is a security feature. Just enter your password and press <kbd>Enter</kbd>.
 
-    > [!NOTE] 
-    > There are two completely different terminals: one for Windows commands (`PowerShell`), and one for Linux commands (your Linux distribution terminal). Ensure you use the correct terminal for each step.
+> [!NOTE] 
+> There are two completely different terminals: one for Windows commands (`PowerShell`), and one for Linux commands (your Linux distribution terminal). Ensure you use the correct terminal for each step.
 
 6. Confirm the installation:
    - Verify that **Ubuntu 22.04 LTS** was installed by typing in the Linux terminal:
