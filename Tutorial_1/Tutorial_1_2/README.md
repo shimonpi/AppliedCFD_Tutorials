@@ -41,7 +41,13 @@ You'll need to navigate to the `$FOAM_RUN` directory and create a new directory 
 
 ```bash
 cd $FOAM_RUN
+```
+
+```bash
 mkdir cavity2d
+```
+
+```bash
 cp -r $FOAM_TUTORIALS/legacy/incompressible/icoFoam/cavity/cavity/* cavity2d/
 ```
 
@@ -76,6 +82,9 @@ After copying the tutorial files, you can explore the contents of your new "cavi
 
 ```bash
 cd cavity2d
+```
+
+```bash
 ls
 ```
 
@@ -95,14 +104,17 @@ Each directory plays a crucial role in defining the setup and execution of **Ope
 
 ## Editor Setup
 
-Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install "gedit":
+Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install `gedit"`:
 
 ```bash
 sudo apt update
+```
+
+```bash
 sudo apt install gedit
 ```
 
-For a more powerful editing experience, "Visual Studio Code" (VS Code) offers extensive capabilities, including integration with WSL.
+For a more powerful editing experience, "Visual Studio Code" (VS Code) offers extensive capabilities, including integration with `wsl`.
 
 ## Modifying Physical Properties
 
@@ -144,16 +156,19 @@ Navigate to the "0" directory and list the files using the `ls` command.
 
 ```bash
 cd $FOAM_RUN/cavity2d/0
-ls
 ```
 
 ```bash
-0
-├── U
-└── p
+ls
 ```
 
-Open the "U" file, and you will see the following:
+Open the "U" file:
+
+```bash
+gedit U
+```
+
+You will see the following:
 
 ![U_orig](U_orig.png)
 
@@ -199,8 +214,11 @@ One of the tools **OpenFOAM** provides is "blockMesh" which is used for creating
 
 Now, navigate to the "system" directory to open and review the "blockMeshDict" file.
 
-```cpp
+```bash
 cd $FOAM_RUN/cavity2d/system
+```
+
+```bash
 gedit blockMeshDict
 ```
 
@@ -218,29 +236,29 @@ In the file you'll see several sections:
    
    The vertices section of blockMeshDict outlines the coordinates of points in the 3D space that define the corner points of the mesh. For the LDC problem, which can often be treated as quasi-2D, the mesh may slightly extend into the third dimension to accommodate **OpenFOAM**’s inherently 3D calculations.
 
+   ```cpp
+   vertices
+   (
+    (0 0 0)        // vertex number 0
+    (1 0 0)	    // vertex number 1
+    (1 1 0)	    // vertex number 2
+    (0 1 0)	    // vertex number 3
+    (0 0 0.1)     	// vertex number 4
+    (1 0 0.1)	    // vertex number 5
+    (1 1 0.1)	    // vertex number 6
+    (0 1 0.1)	    // vertex number 7
+   );
+   ```
+
    <figure>
    <img src="block_structure_mesh.png"
-       alt="Albuquerque, New Mexico">
+    alt="Albuquerque, New Mexico">
    <figcaption>
 
    Figure: Block structure of the mesh for the cavity [openfoam.com](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow).
 
    </figcaption>
    </figure>
-
-   ```cpp
-   vertices
-   (
-      (0 0 0)      // vertex number 0
-      (1 0 0)	    // vertex number 1
-      (1 1 0)	    // vertex number 2
-      (0 1 0)	    // vertex number 3
-      (0 0 0.1)	// vertex number 4
-      (1 0 0.1)	// vertex number 5
-      (1 1 0.1)	// vertex number 6
-      (0 1 0.1)	// vertex number 7
-   );
-   ```
 
    This setup specifies that vertex "0" is the origin, and other vertices are defined relative to this origin. Vertex "4", for example, is directly behind vertex "0" if looking along the z-axis.
 
@@ -265,38 +283,38 @@ In the file you'll see several sections:
    - Type: This property specifies the nature of the boundary, such as whether it is a wall, an inlet, an outlet, or a symmetry plane.
    - Faces: This property lists the indices of the vertices that define the boundary face. These indices correspond to the vertices defined in the "vertices" section of the blockMeshDict file. Each face is usually defined by a tuple of four vertex indices, outlining a quadrilateral patch on the boundary of the mesh.
 
-   ```cpp
-   boundary
-   (
-      movingWall
-      {
-         type wall;
-         faces
-         (
-               (3 7 6 2)
-         );
-      }
-      fixedWalls
-      {
-         type wall;
-         faces
-         (
-               (0 4 7 3)
-               (2 6 5 1)
-               (1 5 4 0)
-         );
-      }
-      frontAndBack
-      {
-         type empty;
-         faces
-         (
-               (0 3 2 1)
-               (4 5 6 7)
-         );
-      }
-   );
-   ```
+      ```cpp
+      boundary
+      (
+         movingWall
+         {
+            type wall;
+            faces
+            (
+                  (3 7 6 2)
+            );
+         }
+         fixedWalls
+         {
+            type wall;
+            faces
+            (
+                  (0 4 7 3)
+                  (2 6 5 1)
+                  (1 5 4 0)
+            );
+         }
+         frontAndBack
+         {
+            type empty;
+            faces
+            (
+                  (0 3 2 1)
+                  (4 5 6 7)
+            );
+         }
+      );
+      ```
    
    An essential aspect of setting up boundary conditions in the "blockMeshDict" is the consistency in naming the boundaries. The names given to different boundary sections in the "blockMeshDict" must match exactly with those used in the field definition files like "U" (velocity) and "p" (pressure). This consistency ensures that **OpenFOAM** correctly applies the boundary conditions specified for velocity and pressure to the corresponding sections of the mesh.
 
@@ -321,7 +339,7 @@ The file contains several critical settings:
    
 Let's change the following lines:
 
-```cp
+```cpp
 endTime         50;
 
 writeControl    runTime;

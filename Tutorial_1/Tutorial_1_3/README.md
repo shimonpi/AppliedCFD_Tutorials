@@ -17,7 +17,7 @@
   - [References](#references)
 
 ## Introduction
-In this part of the tutorial, you will run the lid-driven cavity (LDC) simulation set up in [Tutorial 1.2](../Tutorial_1_2/README.md). You will also learn how to monitor the simulation progress and understand the computational processes involved. Finally, we will discuss post-processing techniques to visualize and analyze the results.
+In this part of the tutorial, you will run the LDC simulation set up in [Tutorial 1.2](../Tutorial_1_2/README.md). You will also learn how to monitor the simulation progress and understand the computational processes involved. Finally, we will discuss post-processing techniques to visualize and analyze the results.
 
 ## Running the Simulation
 To start the simulation, follow these steps:
@@ -53,6 +53,9 @@ To start the simulation, follow these steps:
    Alternatively, you can save the solver output to a log file for easier analysis:
    ```bash
    icoFoam > log &
+   ```
+
+   ```bach
    tail -f log
    ```
    The `tail -f` command allows you to view the log file in real-time. To exit `tail -f`, press <kbd>Ctrl+C</kbd>.

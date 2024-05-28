@@ -19,7 +19,7 @@ By following these steps, you will prepare your computer to use **OpenFOAM** for
 
 We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The `.org` version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the `.com` version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the `.org` version is more suitable due to its open access and extensive community support.
 
-> [!NOTE]
+> [!IMPORTANT]
 > This guide is intended for Windows users. If you are using macOS, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
 
 ## Setup
@@ -42,8 +42,15 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Win
      ```
    - Restart your computer to complete the installation.
 5. Set up your Linux distribution:
-   - After restarting, the Linux distribution terminal window should pop up automatically. If not, launch the new Linux terminal via the "Start" menu or by typing its name in `PowerShell` or `Command Prompt`.
+   - After restarting, the Linux distribution terminal window should pop up automatically. If not, launch the new Linux terminal via the "Start" menu or by typing its name in `PowerShell` or `Command Prompt` (in our case "Ubuntu").
    - Follow the prompts to set up your new user account and password.
+
+    > [!NOTE] 
+    > When setting up your user account, the password will not appear on the Terminal window as you type it. This is a security feature. Just enter your password and press <kbd>Enter</kbd>.
+
+    > [!NOTE] 
+    > There are two completely different terminals: one for Windows commands (`PowerShell`), and one for Linux commands (your Linux distribution terminal). Ensure you use the correct terminal for each step.
+
 6. Confirm the installation:
    - Verify that **Ubuntu 22.04 LTS** was installed by typing in the Linux terminal:
      ```bash
@@ -57,6 +64,8 @@ With your Linux set up, you are now ready to install **OpenFOAM**.
    - Update your Linux system's packages:
      ```bash
      sudo apt update
+     ```
+     ```bash
      sudo apt full-upgrade -y
      ```
 2. Install dependencies required by **OpenFOAM**:
@@ -68,8 +77,14 @@ With your Linux set up, you are now ready to install **OpenFOAM**.
    - Use the following commands:
      ```bash
      sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key > /etc/apt/trusted.gpg.d/openfoam.asc"
+     ```
+     ```bash
      sudo add-apt-repository http://dl.openfoam.org/ubuntu
+     ```
+     ```bash
      sudo apt-get update
+     ```
+     ```bash
      sudo apt-get -y install openfoam11
      ```
 4. Configure the **OpenFOAM** environment:
@@ -107,20 +122,24 @@ To ensure that your installation is functioning correctly, run a simple test cas
      ```
 2. Prepare your run directory:
    - The **OpenFOAM** environment includes a `$FOAM_RUN` variable which represents a directory in the user's file system at `$HOME/OpenFOAM/<USER>-11/run` where `<USER>` is the account login name and `11` is the **OpenFOAM** version number. This directory is the recommended location to store and run simulation cases.
-   - Create the `run` directory by typing:
-     ```bash
-     mkdir -p $FOAM_RUN
-     ```
-   - Check if the directory exists by typing:
-     ```bash
-     ls $FOAM_RUN
-     ```
+     - Create the `run` directory by typing:
+       ```bash
+       mkdir -p $FOAM_RUN
+       ```
+     - Check if the directory exists by typing:
+       ```bash
+       ls $FOAM_RUN
+       ```
 3. Copy an example case:
-   - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory. For instance, to try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
-     ```bash
-     cd $FOAM_RUN
-     cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
-     ```
+   - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory.
+     - To try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
+        ```bash
+        cd $FOAM_RUN
+        ```
+
+        ```bash
+        cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
+        ```
 4. Run the example case:
    - Navigate to the cavity directory:
      ```bash
@@ -129,11 +148,22 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - Run the simulation by typing:
      ```bash
      blockMesh
+     ```
+
+     ```bash
      foamRun
+     ```
+
+     ```bash
      touch cavity.foam
      ```
 5. Post-process the results using **ParaView**:
    - Copy the files from the `wsl` directory to a location in your Windows filesystem. This step might be necessary because **ParaView** on Windows might not have direct access to files within the `wsl` environment.
+     - Open the directory in Windows:
+       ```bash
+       explorer.exe .
+       ```
+       This command will open the current directory in the `Windows File Explorer`, allowing you to easily locate the cavity case directory.
    - Launch **ParaView** on your Windows machine.
    - Use the "File &rarr; Open" menu to navigate to the copied case files on your Windows filesystem and open the file with the extension `.foam`.
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
@@ -148,29 +178,31 @@ This section provides a clear guide for users who want to completely remove `wsl
 1. Uninstall your Linux distribution:
    - Open `PowerShell` as "Administrator".
    - List all installed `wsl` distributions:
-     ```
+     ```bash
      wsl --list --verbose
      ```
-   - Uninstall the desired distribution (replace `<DistroName>` with the actual name, e.g., `Ubuntu`):
-     ```
-     wsl --unregister <DistroName>
+   - Uninstall the desired distribution:
+     ```bash
+     wsl --unregister Ubuntu
      ```
 2. Remove Ubuntu and Linux from Apps & Features:
    - Press <kbd>Win+I</kbd> to open "Settings", then navigate to "Apps &rarr; Apps & Features".
    - Search for "Ubuntu" and for "Linux" in the list, select it, and click "Uninstall".
    - If "Linux" does not appear in the list, open `PowerShell` and use `winget` to find and uninstall it:
-     ```
+     ```bash
      winget list
+     ```
+     ```bash
      winget uninstall --name "Windows Subsystem for Linux" 
      ```
-1. Uninstall WSL components:
+3. Uninstall WSL components:
    - Open `PowerShell` as "Administrator".
    - Disable `wsl` feature:
-     ```
+     ```bash
      dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /norestart
      ```
    - Disable `Virtual Machine Platform` feature:
-      ```
+      ```bash
       dism.exe /online /disable-feature /featurename:VirtualMachinePlatform /norestart
       ```
    - Restart your computer to complete the uninstallation process.
@@ -184,7 +216,7 @@ This section provides a clear guide for users who want to completely remove `wsl
 
 ## Conclusion and Troubleshooting
 
-You should now have a functional **OpenFOAM** installation on your Windows machine, along with the ability to visualize results using **ParaView**. As you begin working with **OpenFOAM**, remember that learning to troubleshoot and solve problems is a valuable skill in computational engineering. Should you encounter issues, revisit the steps to ensure all commands were entered correctly. For further assistance, don’t hesitate to consult with the course TA or refer to the **OpenFOAM** community forums. By following this guide, you’re well on your way to performing complex fluid dynamics simulations. 
+You should now have a functional **OpenFOAM** installation on your Windows machine, along with the ability to visualize results using **ParaView**. As you begin working with **OpenFOAM**, remember that learning to troubleshoot and solve problems is a valuable skill in computational engineering. Should you encounter issues, revisit the steps to ensure all commands were entered correctly. By following this guide, you’re well on your way to performing complex fluid dynamics simulations. 
 
 Happy computing!
 
