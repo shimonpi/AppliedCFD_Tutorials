@@ -59,6 +59,9 @@ This setup ensures that you have a personal copy of the tutorial, allowing you t
 > Open the configuration file in a text editor:
 >  ```bash
 >  cd
+>  ```
+>
+>  ```bash
 >  gedit ~/.bashrc
 >  ```
 > Scroll to the end of the file and add the following line:

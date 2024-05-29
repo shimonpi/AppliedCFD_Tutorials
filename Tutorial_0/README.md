@@ -115,12 +115,11 @@ To visualize simulation results, you need to install **ParaView**. Since it's mo
 To ensure that your installation is functioning correctly, run a simple test case. The test case is taken from the tutorials directory which contains numerous example cases in **OpenFOAM**.
 
 1. Explore the example cases:
-   - The tutorials directory location is represented by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment.
-   - List the top-level contents of the `$FOAM_TUTORIALS` directory by typing in a terminal:
+   - The tutorials directory location is represented by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment. List the top-level contents of the `$FOAM_TUTORIALS` directory by typing in a terminal:
      ```bash
      ls $FOAM_TUTORIALS
      ```
-2. Prepare your run directory:
+1. Prepare your run directory:
    - The **OpenFOAM** environment includes a `$FOAM_RUN` variable which represents a directory in the user's file system at `$HOME/OpenFOAM/<USER>-11/run` where `<USER>` is the account login name and `11` is the **OpenFOAM** version number. This directory is the recommended location to store and run simulation cases.
      - Create the `run` directory by typing:
        ```bash
@@ -130,7 +129,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
        ```bash
        ls $FOAM_RUN
        ```
-3. Copy an example case:
+2. Copy an example case:
    - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory.
      - To try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
         ```bash
@@ -140,7 +139,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
         ```bash
         cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
         ```
-4. Run the example case:
+3. Run the example case:
    - Navigate to the cavity directory:
      ```bash
      cd cavity
@@ -157,7 +156,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
      ```bash
      touch cavity.foam
      ```
-5. Post-process the results using **ParaView**:
+4. Post-process the results using **ParaView**:
    - To use **ParaView** on Windows with files from your `wsl` environment, you need to copy the necessary files to a location in your Windows filesystem. This step ensures **ParaView** can access these files.
      - Open the current directory in `Windows File Explorer` from the Linux terminal:
        ```bash
@@ -167,7 +166,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
    - Launch **ParaView** on your Windows machine.
    - Use the "File &rarr; Open" menu to navigate to the copied case files on your Windows filesystem and open the file with the extension `.foam`.
    - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
-6. Here is what you should see if everything was done correctly:
+5. Here is what you should see if everything was done correctly:
 
    ![plot_ldc_raw](ldc_raw.png)
 
