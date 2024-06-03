@@ -4,9 +4,9 @@
 - [Tutorial 1.2 - Setting Up the Lid-Driven Cavity Problem in OpenFOAM](#tutorial-12---setting-up-the-lid-driven-cavity-problem-in-openfoam)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+  - [Editor Setup](#editor-setup)
   - [Getting Started](#getting-started)
   - [Directory Structure Overview](#directory-structure-overview)
-  - [Editor Setup](#editor-setup)
   - [Modifying Physical Properties](#modifying-physical-properties)
   - [Reviewing the Velocity File](#reviewing-the-velocity-file)
   - [Reviewing the Pressure File](#reviewing-the-pressure-file)
@@ -32,6 +32,20 @@ ls $FOAM_TUTORIALS
 
 > [!CAUTION]
 > Beginners and those unfamiliar with Linux or programming should avoid altering the contents of the original installation directory, identified by the `$WM_PROJECT_DIR` variable. Making changes without sufficient expertise could disrupt the software setup, necessitating a full reinstallation.
+
+## Editor Setup
+
+Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install `gedit"`:
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install gedit
+```
+
+For a more powerful editing experience, "Visual Studio Code" (VS Code) offers extensive capabilities, including integration with `wsl`.
 
 ## Getting Started
 
@@ -104,20 +118,6 @@ Each directory plays a crucial role in defining the setup and execution of **Ope
 1. "0": This directory holds the setup files for primary field variables such as velocity ($`U`$), pressure ($`p`$), and any other scalar or vector fields relevant to the simulation. Each file represents a different variable and specifies initial conditions and boundary conditions for that variable.
 2. "constant": This directory stores data that remains constant throughout the simulation, including physical properties of the fluids ("physicalProperties"), the thermodynamic properties, and the mesh ("polyMesh").
 3. "system": This directory holds configuration files that control the simulation's execution. These files define the solver settings, discretization schemes, and algorithms used during the run.
-
-## Editor Setup
-
-Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install `gedit"`:
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install gedit
-```
-
-For a more powerful editing experience, "Visual Studio Code" (VS Code) offers extensive capabilities, including integration with `wsl`.
 
 ## Modifying Physical Properties
 
