@@ -44,25 +44,25 @@ To start the simulation, follow these steps:
     
    Review the output to ensure that there are no critical errors. Warnings or errors related to mesh quality should be addressed before proceeding with the simulation.
 
-4. Run the simulation:
-   ```bash
-   icoFoam
-   ```
-   The simulation will start, and you will see a series of messages in the terminal as the solver progresses through each time step.
-
-   Alternatively, you can save the solver output to a log file for easier analysis:
+4. Run the simulation and save the solver output to a log file for easier analysis:
    ```bash
    icoFoam > log &
    ```
-
-   ```bach
+   ```bash
    tail -f log
    ```
    The `tail -f` command allows you to view the log file in real-time. To exit `tail -f`, press <kbd>Ctrl+C</kbd>.
 
+   The simulation will start, and you will see a series of messages in the terminal as the solver progresses through each time step.
+
    You will see the following:
 
    ![run_snip](run_snip.png)
+
+   Alternatively, you can run the solver without saving a log file:
+   ```bash
+   icoFoam
+   ```
 
 5. Clean the case directory (if needed) using the `foamCleanCase` utility. This utility removes files from previous simulations, ensuring a fresh start:
    ```bash
@@ -181,7 +181,7 @@ After monitoring the simulation to ensure correct execution and convergence, the
      ```bash
      cp -r $FOAM_RUN/cavity2d /mnt/c/Users/<YourUserName>/Downloads/
      ```
-     Replace `<YourUserName>` with your actual Windows username. This command copies the entire "cavity2d" directory to your Windows "Documents" folder, making it accessible from Windows.
+     Replace `<YourUserName>` with your actual Windows username. This command copies the entire "cavity2d" directory to your Windows "Downloads" folder, making it accessible from Windows.
 2. Opening the case in **ParaView**:
    - Open **ParaView** from your Windows start menu.
    - Go to "File &rarr; Open", and navigate to the directory where you copied the "cavity2d" folder.
@@ -252,37 +252,34 @@ The benchmark data we are using for comparison comes from the study by [Ghia, Gh
 
 To deepen your understanding of fluid dynamics and simulation techniques, you are encouraged to explore various parameters and their effects on the LDC flow. These exercises are designed to help you grasp the sensitivity of the simulation results to changes in physical and numerical parameters and to extend your skills in setting up and modifying CFD cases in **OpenFOAM**.
 
-1. Varying Reynolds numbers:
-   - Objective: Understand how the flow behavior changes with different Reynolds numbers.
-   - Task: Run the simulation for different Reynolds numbers: 400, 1000, and 10000.
-   - Instructions:
-     - Modify the "physicalProperties" file to adjust the kinematic viscosity corresponding to each Reynolds number.
-     - Ensure other settings are consistent with the baseline case to isolate the effect of changes in Reynolds number.
-   - Analyze how the flow transitions from laminar to potentially turbulent as Re increases.
-2. Refining the mesh:
+1. Refining the mesh:
    - Objective: Observe how mesh refinement affects the accuracy and convergence of the solution.
    - Task: Simulate the cavity flow with different mesh sizes. Try grids of 10x10 and 50x50 cells.
    - Instructions:
      - Use the "blockMeshDict" file to redefine the mesh. Change the blocks section to specify the number of cells in each direction.
      - Compare the results with those obtained from the 20x20 mesh to assess improvements or changes in the flow details and convergence characteristics.
-3. Adjusting time steps:
+2. Adjusting time steps:
    - Objective: Examine the impact of time step size on the simulation's stability and accuracy.
    - Task: Experiment with different time steps. Reduce to 0.001 and increase to 0.01.
    - Instructions:
      - Edit the `deltaT` parameter in the "controlDict" file.
-     - Observe the effects on the simulation's convergence rate and the smoothness of the solution
+     - Observe the effects on the simulation's convergence rate and the smoothness of the solution.
+3. Varying Reynolds numbers:
+   - Objective: Understand how the flow behavior changes with different Reynolds numbers.
+   - Task: Run the simulation for different Reynolds numbers: 400, 1000, and 10000.
+   - Instructions:
+     - Modify the "physicalProperties" file to adjust the kinematic viscosity corresponding to each Reynolds number.
+     - Ensure other settings are consistent with the baseline case to isolate the effect of changes in Reynolds number.
+     - Analyze how the flow transitions from laminar to potentially turbulent as Re increases.
 4. Advanced challenge - clipped cavity case:
    - Objective: Develop skills in modifying and setting up more complex geometries and boundary conditions.
    - Task: Build and simulate the clipped cavity case as showcased in the **OpenFOAM** [documentation (2.1.9)](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow).
    - Instructions:
-Follow the tutorial on the OpenFOAM documentation site to set up the clipped cavity case.
-This involves modifying the geometry in the blockMeshDict and adjusting boundary conditions accordingly.
-Analyze how the clipped section affects the flow pattern and compare it with the standard lid-driven cavity flow.
-   - Without following the specific tutorial, try to conceptualize and create a "clipped" version of the standard lid-driven cavity. This means you will modify the geometry to include an obstruction or alteration that changes the flow dynamics.
-   - Start by modifying the blockMeshDict to define your new geometry. 
-   - Think about how clipping or altering a portion of the cavity might affect the flow and how you would like to explore these effects.
-   - Adjust the boundary conditions and other simulation parameters in **OpenFOAM** to accommodate your new setup.
-   - Run simulations to see how the clipped section influences the flow pattern compared to the unaltered cavity.
+     - Without following the specific tutorial, try to conceptualize and create a "clipped" version of the standard lid-driven cavity. This means you will modify the geometry to include an obstruction or alteration that changes the flow dynamics.
+     - Start by modifying the blockMeshDict to define your new geometry. 
+     - Think about how clipping or altering a portion of the cavity might affect the flow and how you would like to explore these effects.
+     - Adjust the boundary conditions and other simulation parameters in **OpenFOAM** to accommodate your new setup.
+     - Run simulations to see how the clipped section influences the flow pattern compared to the unaltered cavity.
 
 ## References
 
