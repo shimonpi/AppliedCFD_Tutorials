@@ -75,7 +75,7 @@ Nondimensionalization involves converting key physical quantities into dimension
 These adjustments lead to a dimensionless form of the momentum equation:
 
 ```math
-textbf{u}^* \cdot \nabla^* \textbf{u}^* = -\nabla p^{*} + \frac{1}{Re} \nabla^{*2} \textbf{u}^{*}
+\textbf{u}^* \cdot \nabla^* \textbf{u}^* = -\nabla p^{*} + \frac{1}{Re} \nabla^{*2} \textbf{u}^{*}
 ```
 
 Here, $`Re`$ represents the Reynolds number ($`Re = \frac{\rho UL}{\mu}`$). This number is pivotal as it indicates the relative significance of inertial forces compared to viscous forces in fluid flow. As the Reynolds number increases, the relative influence of the viscous term diminishes compared to the inertial term. This shift indicates a transition toward flow regimes where inertial effects dominate, such as in high-speed flows or turbulent conditions. The inertial term’s nonlinearity contrasts with the linearity of the viscous term, thus an increase in Reynolds number leads to more nonlinear behavior in the fluid flow.
