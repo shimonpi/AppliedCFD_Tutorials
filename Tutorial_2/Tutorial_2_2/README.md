@@ -19,7 +19,7 @@
 The goal of this tutorial is to guide you through the setup and simulation of laminar flow over a flat plate using **OpenFOAM**. This hands-on exercise will deepen your understanding of boundary layer development. By the end, you will be able to visualize and analyze the flow characteristics, reinforcing your theoretical knowledge through computational practice.
 
 ## Transition to OpenFOAM version 11
-We will be using **OpenFOAM** version 11. This version introduces several updates and improvements, including changes to solvers and utilities. Specifically, we will use "[foamRun"](https://doc.cfd.direct/openfoam/user-guide-v11/running-applications)", a utility that handles running simulations by specifying the solver type in the "controlDict" file.
+We will be using **OpenFOAM** version 11. This version introduces several updates and improvements, including changes to solvers and utilities. Specifically, we will use "[foamRun](https://doc.cfd.direct/openfoam/user-guide-v11/running-applications)", a utility that handles running simulations by specifying the solver type in the "controlDict" file.
 
 ## Getting Started
 

@@ -43,7 +43,7 @@ tail -f log
 
 Press <kbd>Ctrl+C</kbd> to exit the log viewer once the simulation completes.
 
-To visualize the residuals and ensure convergence, process the log file using foamLog:
+To visualize the residuals and ensure convergence, process the "log" file using "foamLog":
 
 ```bash
 foamLog log
@@ -71,7 +71,7 @@ The wall shear stress is an important parameter in boundary layer analysis, repr
 
 ## Visualizing Results
 
-Create a .foam file to enable visualization in ParaView:
+Create a .foam file to enable visualization in **ParaView**:
 
 ```bash
 touch plate.foam
