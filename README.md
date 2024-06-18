@@ -13,7 +13,7 @@ Welcome to the Applied Computational Fluid Dynamics (CFD) Tutorials repository. 
    
    Dive into setting up your first CFD simulation case. This tutorial covers the initial steps of preparing the lid-driven cavity benchmark case and running it in **OpenFOAM**, and visualizing the results using **ParaView**.
 
-3. Tutorial 2: 
+3. Tutorial 2: Laminar Flow Over a Flat Plate
    - [Tutorial 2.1 – Introduction to boundary layer and Blasius Solution](Tutorial_2/README.md)
    - [Tutorial 2.2 – OpenFOAM Setup](Tutorial_2/Tutorial_2_2/README.md)
    - [Tutorial 2.3 – Running the Simulation and Post-Processing](Tutorial_2/Tutorial_2_3/README.md)

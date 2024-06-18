@@ -71,7 +71,7 @@ The wall shear stress is an important parameter in boundary layer analysis, repr
 
 ## Visualizing Results
 
-Create a .foam file to enable visualization in **ParaView**:
+Create a ".foam" file to enable visualization in **ParaView**:
 
 ```bash
 touch plate.foam
@@ -83,7 +83,7 @@ Transfer the simulation data to your Windows system for visualization by using t
 cp -r $FOAM_RUN/laminar_flatplate /mnt/c/Users/<YourUserName>/Downloads/
 ```
 
-Replace \<YourUserName\> with your actual Windows username.
+Replace "YourUserName" with your actual Windows username.
 
 Visualizing the results in **ParaView**:
 1. Open **ParaView** from your Windows start menu and load "plate.foam" file.
@@ -128,7 +128,7 @@ Visualizing the results in **ParaView**:
 
      Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_solution.csv](Cf_solution.csv)).
 
-      ![Cf_solution](Cf_solution.png)
+     ![Cf_solution](Cf_solution.png)
 
 The plot indicates an acceptable overlap between the simulation results and the analytical solution.
 

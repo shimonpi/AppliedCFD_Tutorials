@@ -173,7 +173,7 @@ A "simpleGrading" entry has the form (gx gy gz), where gx is the grading in the 
 
 
 <figure>
-<img src="mesh_grading.png" alt="Mesh grading">
+<img src="mesh_grading.png">
 <figcaption>
 
 Figure: Mesh grading along a block edge [doc.cfd.direct](https://doc.cfd.direct/openfoam/user-guide-v11/blockmesh).
@@ -190,7 +190,7 @@ We will define four blocks to achieve the necessary mesh refinement:
 Below is an illustration of the block structure and vertex numbering used in the mesh setup.
 
 <figure>
-<img src="block_structure.png" alt="Block structure and vertex numbering">
+<img src="block_structure.png">
 <figcaption>
 
 Figure: Block structure [openfoam.com](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow).
@@ -311,7 +311,7 @@ By following this mesh setup, we ensure that the boundary layer is accurately ca
 At the transition point from slip to no-slip, a finer mesh is advised to capture the gradients accurately. However, in "blockMesh", grading over the x-direction can be more complicated and a source of error. For advanced meshes, refer to examples such as the one in [SU2](https://su2code.github.io/tutorials/Laminar_Flat_Plate/) or [Ansys](https://ansys13.ansys.com/AnsysInnovationCourses/FBU/AIC2-RealViscousFlows/Course%201%20-%20Laminar%20Boundary%20Layer%20Theory/Simulation%20Example%20-%20Laminar%20Flow%20Over%20Flat%20Plate/LaminarFlowOverFlatPlate-SimulationFiles.zip).
 
 <figure>
-<img src="su2_mesh.png" alt="Figure of the computational mesh with boundary conditions">
+<img src="su2_mesh.png">
 <figcaption>
 
 Figure: Mesh from [SU2](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow).
