@@ -161,6 +161,8 @@ Specify the simulation type as laminar in the "constant/momentumTransport" file:
 simulationType  laminar;
 ```
 
+Make sure to remove all lines related to Reynolds-Averaged Navier-Stokes (RAS) models from the "constant/momentumTransport" file, as these are not needed for laminar flow simulations.
+
 ## Mesh setup
 
 To accurately capture the boundary layer development over the flat plate, the mesh must be fine enough near the wall where the gradients are highest. However, using a uniformly fine mesh throughout the entire domain is impractical due to computational constraints. Instead, we employ a non-uniform mesh using "simpleGrading" to refine the mesh where necessary while keeping it coarser elsewhere.
