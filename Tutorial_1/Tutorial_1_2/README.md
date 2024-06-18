@@ -35,7 +35,7 @@ ls $FOAM_TUTORIALS
 
 ## Editor Setup
 
-Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install `gedit"`:
+Before you begin editing files in **OpenFOAM**, set up a text editor that supports the functionalities you need. For a basic editor, you can install `gedit`:
 
 ```bash
 sudo apt update
