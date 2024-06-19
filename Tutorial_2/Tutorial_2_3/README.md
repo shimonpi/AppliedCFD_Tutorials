@@ -111,8 +111,10 @@ The mesh is significantly refined near the bottom boundary, where the no-slip wa
 
 5. Calculate and plot the skin friction coefficient ($`C_f`$).
    - Go to the toolbar and click on the "Calculator" button.
+     
 ![calculator](calculator.png)
   - In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
+    
 ![calculator_panel](calculator_panel.png)  
   - Use the "Plot Over Line" filter to plot $`C_f`$:
     - Sampling Pattern: Sample At Segment Centers
