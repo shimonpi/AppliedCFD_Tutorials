@@ -89,7 +89,7 @@ Visualizing the results in **ParaView**:
 1. Open **ParaView** from your Windows start menu and load "plate.foam" file.
 2. Visualize "U_x" and mesh edges. Here is what you should see if everything is done correctly:
 
-   <img src="/Tutorial_2/Tutorial_2_3/mesh-image.png">
+<img src="/Tutorial_2/Tutorial_2_3/mesh-image.png">
    
    The mesh is significantly refined near the bottom boundary, where the no-slip wall is located. The fine mesh near the wall will help in resolving the velocity and shear stress profiles within the boundary layer. The vertical grading helps in transitioning from a fine mesh near the wall to a coarser mesh away from it, reducing the total number of cells while maintaining accuracy where needed. The cells near the wall have a high aspect ratio (they are much longer in the x-direction than in the y-direction). This is appropriate for boundary layer simulations where the velocity changes rapidly in the y-direction but more gradually in the x-direction. However, care must be taken to ensure that the aspect ratio is not too extreme, as it can affect numerical stability and accuracy.
 4. To analyze the boundary layer development, plot the velocity profile $`U_x`$ at $`x = 0.1`$. 
