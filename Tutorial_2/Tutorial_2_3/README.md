@@ -91,14 +91,16 @@ Visualizing the results in **ParaView**:
 
    <figure>
    <img src="mesh_image.png">
+   </figure>
+
 
    The mesh is significantly refined near the bottom boundary, where the no-slip wall is located. The fine mesh near the wall will help in resolving the velocity and shear stress profiles within the boundary layer. The vertical grading helps in transitioning from a fine mesh near the wall to a coarser mesh away from it, reducing the total number of cells while maintaining accuracy where needed. The cells near the wall have a high aspect ratio (they are much longer in the x-direction than in the y-direction). This is appropriate for boundary layer simulations where the velocity changes rapidly in the y-direction but more gradually in the x-direction. However, care must be taken to ensure that the aspect ratio is not too extreme, as it can affect numerical stability and accuracy.
  
 3. To analyze the boundary layer development, plot the velocity profile $`U_x`$ at $`x = 0.1`$. 
    - Use the "Plot Over Line" filter:
      - Sampling Pattern: Sample At Segment Centers
-     - Point1: (0.1, 0, 0.05)
-     - Point2: (0.1, 0, 0.05)
+     - Point1: (0.1, 0.0, 0.05)
+     - Point2: (0.1, 0.1, 0.05)
      - X Array Name: Points_Y
      - Series Parameters: U_x
      - Line Style: None
@@ -109,32 +111,39 @@ Visualizing the results in **ParaView**:
 
    <figure>
    <img src="U_x_solution.png">
+   </figure>
 
 4. Calculate and plot the skin friction coefficient ($`C_f`$).
    - Go to the toolbar and click on the "Calculator" button. 
      
      <figure>
      <img src="calculator.png">
+     </figure>
+
 
    - In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
      
      <figure>
      <img src="calculator_panel.png">
+     </figure>
+
     
    - Use the "Plot Over Line" filter to plot $`C_f`$:
       - Sampling Pattern: Sample At Segment Centers
-      - Point1: (0.0, 0, 0.05)
-      - Point2: (0.5, 0, 0.05)
+      - Point1: (0.0, 0.0, 0.05)
+      - Point2: (0.5, 0.0, 0.05)
       - X Array Name: Points_X
       - Series Parameters: Cf
       - Line Style: None
       - Marker Style: Circle
       - Marker Size: 7.0 
 
-   - Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_solution.csv](Cf_solution.csv)).
+   - Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_Blasius.csv](Cf_Blasius.csv)).
 
      <figure>
      <img src="Cf_solution.png">
+     </figure>
+
 
 ## Exploratory exercises
 
