@@ -111,22 +111,19 @@ The mesh is significantly refined near the bottom boundary, where the no-slip wa
 
 5. Calculate and plot the skin friction coefficient ($`C_f`$).
    - Go to the toolbar and click on the "Calculator" button.
-   - ![calculator](calculator.png)
-
-- In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
-
-![calculator_panel](calculator_panel.png)
-     
-   - Use the "Plot Over Line" filter to plot $`C_f`$:
-      - Sampling Pattern: Sample At Segment Centers
-      - Point1: (0.0, 0.0, 0.05)
-      - Point2: (0.5, 0.0, 0.05)
-      - X Array Name: Points_X
-      - Series Parameters: Cf
-      - Line Style: None
-      - Marker Style: Circle
-      - Marker Size: 7.0 
-   - Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_Blasius.csv](Cf_Blasius.csv)).
+![calculator](calculator.png)
+  - In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
+![calculator_panel](calculator_panel.png)  
+  - Use the "Plot Over Line" filter to plot $`C_f`$:
+    - Sampling Pattern: Sample At Segment Centers
+    - Point1: (0.0, 0.0, 0.05)
+    - Point2: (0.5, 0.0, 0.05)
+    - X Array Name: Points_X
+    - Series Parameters: Cf
+    - Line Style: None
+    - Marker Style: Circle
+    - Marker Size: 7.0 
+  - Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_Blasius.csv](Cf_Blasius.csv)).
 
 ![Cf_solution](Cf_solution.png)
 
