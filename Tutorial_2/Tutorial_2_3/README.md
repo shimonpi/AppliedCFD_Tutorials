@@ -89,7 +89,7 @@ Visualizing the results in **ParaView**:
 1. Open **ParaView** from your Windows start menu and load "plate.foam" file.
 2. Visualize "U_x" and mesh edges. Here is what you should see if everything is done correctly:
 
-![mesh-image](mesh-image.png)
+   ![mesh-image](mesh-image.png)
 
    The mesh is significantly refined near the bottom boundary, where the no-slip wall is located. The fine mesh near the wall will help in resolving the velocity and shear stress profiles within the boundary layer. The vertical grading helps in transitioning from a fine mesh near the wall to a coarser mesh away from it, reducing the total number of cells while maintaining accuracy where needed. The cells near the wall have a high aspect ratio (they are much longer in the x-direction than in the y-direction). This is appropriate for boundary layer simulations where the velocity changes rapidly in the y-direction but more gradually in the x-direction. However, care must be taken to ensure that the aspect ratio is not too extreme, as it can affect numerical stability and accuracy.
  
@@ -106,17 +106,17 @@ Visualizing the results in **ParaView**:
   
    - Apply the filter and compare the obtained velocity profile to the Blasius solution for a boundary layer ([u_x_x01.csv](u_x_x01.csv)).
 
-![Ux-solution](Ux-solution.png)
+      ![Ux-solution](Ux-solution.png)
 
 1. Calculate and plot the skin friction coefficient ($`C_f`$).
    - Go to the toolbar and click on the "Calculator" button. 
      
-![calculator](calculator.png)
+      ![calculator](calculator.png)
 
 
    - In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
 
-![calculator_panel](calculator_panel.png)
+      ![calculator_panel](calculator_panel.png)
     
    - Use the "Plot Over Line" filter to plot $`C_f`$:
       - Sampling Pattern: Sample At Segment Centers
@@ -130,7 +130,7 @@ Visualizing the results in **ParaView**:
 
    - Apply the filter, compare the obtained $`C_f`$ profile to the Blasius solution for a boundary layer ([Cf_Blasius.csv](Cf_Blasius.csv)).
 
-![Cf_solution](Cf_solution.png)
+      ![Cf_solution](Cf_solution.png)
 
 ## Exploratory exercises
 
