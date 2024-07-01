@@ -247,7 +247,7 @@ boundaryField
 
 For our simulation, we set the initial value of the turbulent kinetic energy ($`k`$) in the '0/k' file as $`1.085\times10^{-3} \frac{m^2}{s^2}`$. This value is calculated based on the freestream conditions, ensuring that the turbulence characteristics at the inlet are accurately represented. By defining $`k`$ at the inlet as a fixed value, we establish the initial turbulence intensity of the incoming flow. This helps in accurately capturing the effects of turbulence from the onset of the simulation. 
 
-For the boundary conditions at the wall, we use the `kqRWallFunction`. This function is specifically designed for near-wall treatment in RANS simulations. It ensures that the $`k`$ near the wall is modeled correctly, accounting for the damping effect and the reduced turbulence intensity close to solid boundaries. By using this wall function, the simulation can more accurately predict the boundary layer characteristics, which are crucial for determining the drag and heat transfer rates along the flat plate.
+For the boundary conditions at the wall, we use the 'kqRWallFunction'. This function is specifically designed for near-wall treatment in RANS simulations. It ensures that the $`k`$ near the wall is modeled correctly, accounting for the damping effect and the reduced turbulence intensity close to solid boundaries. By using this wall function, the simulation can more accurately predict the boundary layer characteristics, which are crucial for determining the drag and heat transfer rates along the flat plate.
 
 Edit the '0/omega' file:
 
@@ -356,7 +356,7 @@ C_f = 0.0592Re_x^{-0.2} = 2.707\times10^{-3}
 Let's say we are interested in a value of $`y^+ = \frac{yu_\tau}{\nu} = 1`$ at $`x = 1`$, thus we can derive the needed height of the first cell centroid above the wall:
 
 ```math
-y_1 = \frac{y^+\nu}{u_\tau_w} = \frac{y^+\nu}{\sqrt{\frac{\tau_w}{\rho}}} = \frac{y^+\nu}{\sqrt{0.5C_fU^2}} = 5.4368\times10^{-6} m
+y_1 = \frac{y^+\nu}{u_{\tau_w}} = \frac{y^+\nu}{\sqrt{\frac{\tau_w}{\rho}}} = \frac{y^+\nu}{\sqrt{0.5C_fU^2}} = 5.4368\times10^{-6} \, \text{m}
 ```
 
 The cell center is half of the mesh spacing, so our first guess for the first layer would be $`2y_1 = 1.087\times10^{-5} m`$.
