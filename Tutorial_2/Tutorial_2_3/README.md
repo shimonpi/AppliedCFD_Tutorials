@@ -27,7 +27,7 @@ The "checkMesh" utility performs various checks on the mesh, including:
 - Topology checks: Confirms connectivity and boundary definitions.
 - Additional quality checks: Checks for non-positive volumes and other potential issues.
 
-Review the output to ensure there are no critical errors. Address any warnings or errors related to mesh quality before proceeding. Important aspects to check include:
+Review the output to ensure there are no critical errors. Address any warnings or errors related to mesh quality before proceeding.
 
 Start the simulation using the "foamRun" command:
 
@@ -51,7 +51,7 @@ foamLog log
 
 This command creates a directory named "logs" containing files for each quantity's residuals and other metrics.
 
-For instructions on creating the Gnuplot script to plot the residuals, refer to the residuals plotting section in the previous tutorial.
+For instructions on creating the 'Gnuplot' script to plot the residuals, refer to the residuals plotting section in the previous tutorial.
 
 ## Post-Process Wall Shear Stress
 
