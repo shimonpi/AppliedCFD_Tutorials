@@ -16,7 +16,7 @@
 
 The case we will work on is NASA's 2D zero pressure gradient flat plate case provided on the following pages: [https://turbmodels.larc.nasa.gov/flatplate_val.html](https://turbmodels.larc.nasa.gov/flatplate_val.html) and [https://turbmodels.larc.nasa.gov/flatplate.html](https://turbmodels.larc.nasa.gov/flatplate.html).
 
-The plate is 2 meters in length, which is sufficient to observe the full development of the boundary layer from its initiation at the leading edge to a fully developed turbulent state. The width of the plate is considered infinite for the purpose of this two-dimensional study, eliminating side effects. However, it's important to note that turbulence is inherently a three-dimensional phenomenon, and working in 2D will inevitably result in some error. That said, we will work within the framework of RANS, which is more forgiving to this assumption as the properties are being averaged.
+The plate is 2 meters in length, which is sufficient to observe the full development of the boundary layer from its initiation at the leading edge to a fully developed turbulent state. The width of the plate is considered infinite for the purpose of this two-dimensional study, eliminating side effects. However, it's important to note that turbulence is inherently a three-dimensional phenomenon, and working in 2D will inevitably result in some error. That said, we will work within the framework of RANS, which is more forgiving to this assumption.
 
 A fluid flows over the plate at $`M = 0.2`$ and with a temperature of 300 K. Under ideal gas assumption, the inlet velocity is thus $`U_\infty = 69.44 \frac{m}{s}`$. The Reynolds number ($`Re`$) per unit length of 1 is given as 5 million, so the kinematic viscosity is:
 
@@ -379,7 +379,7 @@ The expansion ratio in the negative x direction is the inverse:
 
 For convenience, we will scale the size by 0.333333333333333 to have more rounded values in the vertices definition.
 
-The setup for the mesh using 'blockMesh' is as follows:
+The setup for the mesh in 'system/blockMeshDict' is as follows:
 
 ```cpp
 convertToMeters 0.333333333333333;
@@ -482,7 +482,7 @@ The 'fvSolution' file in **OpenFOAM** defines the solution algorithms and parame
 
 In the SIMPLE section we can control the residual parameters dictating the criteria for the iterative solution to be considered converged. Residuals represent the difference between the left-hand side and the right-hand side of the discretized equations; lower residuals indicate that the solution is approaching an accurate and stable state.
 
-Change the residual control parameters to stricter tolerances to ensure the equations are accurately resolved. 
+Change the residual control parameters to stricter tolerances to ensure the equations are accurately resolved: 
 
 ```cpp
 SIMPLE

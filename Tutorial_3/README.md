@@ -19,7 +19,9 @@
 
 ## Introduction
 
-In this tutorial, we will explore the dynamics of turbulent flow over a flat plate. Building on the principles of laminar flow discussed in previous tutorials, we will delve into the intricacies of turbulence, which is a common phenomenon in many engineering applications such as aerospace, automotive, and environmental engineering. Turbulence, characterized by chaotic and stochastic property changes in fluid flow, is a complex phenomenon but can be analyzed using various models. We will particularly focus on the k-epsilon (k-$`\epsilon`$) and k-omega (k-$`\omega`$) turbulence models, which are widely used in CFD for their robustness and accuracy. Additionally, we will discuss the law-of-the-wall, a fundamental concept in turbulence modeling near walls.
+In this tutorial, we will explore the dynamics of turbulent flow over a flat plate. Building on the principles of laminar flow discussed in previous tutorials, we will delve into the intricacies of turbulence, which is a common phenomenon in many engineering applications such as aerospace, automotive, and environmental engineering. 
+
+Turbulence, characterized by chaotic and stochastic property changes in fluid flow, is a complex phenomenon but can be analyzed using various models. We will particularly focus on the k-epsilon (k-$`\epsilon`$) and k-omega (k-$`\omega`$) turbulence models, which are widely used in CFD for their robustness and accuracy. Additionally, we will discuss the law-of-the-wall, a fundamental concept in turbulence modeling near walls.
 
 ## Overview
 
@@ -184,15 +186,15 @@ By non-dimensionalizing $`y`$ and $`u`$, the law-of-the-wall can be expressed in
 ### Regions of the Near-Wall Turbulent Flow
 
 As stated previously, the near-wall region of a turbulent boundary layer can be divided into several distinct regions:
-- Viscous Sublayer: This is the layer closest to the wall, typically within $`y^+ < 5`$. In this sublayer, the flow is dominated by viscous forces, and the velocity profile increases linearly with distance from the wall. The dimensionless velocity $`u^+`$ and distance $`y+`$ in this layer are given by:
+- Viscous sublayer: This is the layer closest to the wall, typically within $`y^+ < 5`$. In this sublayer, the flow is dominated by viscous forces, and the velocity profile increases linearly with distance from the wall. The dimensionless velocity $`u^+`$ and distance $`y+`$ in this layer are given by:
 
 ```math
 u^+ = y^+
 ``` 
 
-- Buffer Layer: A thin transition zone where both viscous and turbulent forces are significant, spanning $`5 < y^+ < 30`$ Here, both viscous and turbulent forces are significant. The flow in the buffer layer cannot be described by simple linear or logarithmic relationships due to the complex interactions between viscosity and turbulence.
+- Buffer layer: A thin transition zone where both viscous and turbulent forces are significant, spanning $`5 < y^+ < 30`$ Here, both viscous and turbulent forces are significant. The flow in the buffer layer cannot be described by simple linear or logarithmic relationships due to the complex interactions between viscosity and turbulence.
 
-- Log-Law Region: This region extends beyond the buffer layer, typically from $`y^+ > 30`$ to the edge of the boundary layer. In this subregion, the velocity profile follows a logarithmic distribution and is dominated by turbulent forces. The velocity profile in the log-law region is described by:
+- Log-law region: This region extends beyond the buffer layer, typically from $`y^+ > 30`$ to the edge of the boundary layer. In this subregion, the velocity profile follows a logarithmic distribution and is dominated by turbulent forces. The velocity profile in the log-law region is described by:
 
 ```math
 u^+ = \frac{1}{\kappa} ln(y^+) + B
