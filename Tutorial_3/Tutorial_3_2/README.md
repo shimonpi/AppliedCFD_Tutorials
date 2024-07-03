@@ -305,6 +305,7 @@ gedit 0/nut
 ```cpp
 internalField   uniform 1.25e-7;
 
+boundaryField
 {
     inlet
     {
