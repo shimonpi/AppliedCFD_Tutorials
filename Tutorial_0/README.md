@@ -17,7 +17,7 @@ In this tutorial, you will learn how to install the "Windows Subsystem for Linux
 
 By following these steps, you will prepare your computer to use **OpenFOAM** for our upcoming simulations. Each step includes detailed instructions to make the installation process as smooth as possible, especially if you are new to working with Linux and terminal commands. 
 
-We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The `.org` version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the `.com` version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the `.org` version is more suitable due to its open access and extensive community support.
+We will be using the '.org' version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The '.org' version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the '.com' version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the '.org' version is more suitable due to its open access and extensive community support.
 
 > [!IMPORTANT]
 > This guide is intended for Windows users. If you are using macOS, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
@@ -27,8 +27,8 @@ We will be using the `.org` version of **OpenFOAM**, maintained by the [OpenFOAM
 ### Step 1: Installing WSL
 Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Windows users to run a Linux environment directly on Windows, without the overhead of a traditional virtual machine.
 
-1. Open `PowerShell` as "Administrator":
-   - Right-click on the "Start" button and select "Windows PowerShell (Admin)".
+1. Open `PowerShell` as 'Administrator':
+   - Right-click on the 'Start' button and select 'Windows PowerShell (Admin)'.
 2. List available Linux distributions:
    - To see what distributions are available for download, type:
      ```bash
@@ -42,7 +42,7 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Win
      ```
    - Restart your computer to complete the installation.
 5. Set up your Linux distribution:
-   - After restarting, the Linux distribution terminal window should pop up automatically. If not, launch the new Linux terminal via the "Start" menu or by typing its name in `PowerShell` or `Command Prompt` (in our case "Ubuntu").
+   - After restarting, the Linux distribution terminal window should pop up automatically. If not, launch the new Linux terminal via the 'Start' menu or by typing its name in `PowerShell` or `Command Prompt` (in our case - Ubuntu).
    - Follow the prompts to set up your new user account and password.
 
 > [!NOTE] 
@@ -52,7 +52,7 @@ Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Win
 > There are two completely different terminals: one for Windows commands (`PowerShell`), and one for Linux commands (your Linux distribution terminal). Ensure you use the correct terminal for each step.
 
 6. Confirm the installation:
-   - Verify that **Ubuntu 22.04 LTS** was installed by typing in the Linux terminal:
+   - Verify that "Ubuntu 22.04 LTS" was installed by typing in the Linux terminal:
      ```bash
      lsb_release -a
      ```
@@ -107,21 +107,21 @@ With your Linux set up, you are now ready to install **OpenFOAM**.
 ### Step 3: Installing ParaView
 To visualize simulation results, you need to install **ParaView**. Since it's more stable on Windows, we recommend installing it directly.
 
-1. Download the latest version of **ParaView** (`.msi`) from [**ParaView**'s official website](https://www.paraview.org/).
+1. Download the latest version of **ParaView** ('.msi') from [**ParaView**'s official website](https://www.paraview.org/).
 2. Install **ParaView** by following the on-screen instructions.
-3. Once installed, you can open **ParaView** from the "Start" menu.
+3. Once installed, you can open **ParaView** from the 'Start' menu.
 
 ### Step 4: Running a Test Case
 To ensure that your installation is functioning correctly, run a simple test case. The test case is taken from the tutorials directory which contains numerous example cases in **OpenFOAM**.
 
 1. Explore the example cases:
-   - The tutorials directory location is represented by the `$FOAM_TUTORIALS` variable in the **OpenFOAM** environment. List the top-level contents of the `$FOAM_TUTORIALS` directory by typing in a terminal:
+   - The tutorials directory location is represented by the '\$FOAM_TUTORIALS' variable in the **OpenFOAM** environment. List the top-level contents of the '\$FOAM_TUTORIALS' directory by typing in a terminal:
      ```bash
      ls $FOAM_TUTORIALS
      ```
-1. Prepare your run directory:
-   - The **OpenFOAM** environment includes a `$FOAM_RUN` variable which represents a directory in the user's file system at `$HOME/OpenFOAM/<USER>-11/run` where `<USER>` is the account login name and `11` is the **OpenFOAM** version number. This directory is the recommended location to store and run simulation cases.
-     - Create the `run` directory by typing:
+2. Prepare your run directory:
+   - The **OpenFOAM** environment includes a '\$FOAM_RUN' variable which represents a directory in the user's file system at '\$HOME/OpenFOAM/\<USER>-11/run' where \<USER> is the account login name and '11' is the **OpenFOAM** version number. This directory is the recommended location to store and run simulation cases.
+     - Create the 'run' directory by typing:
        ```bash
        mkdir -p $FOAM_RUN
        ```
@@ -129,8 +129,8 @@ To ensure that your installation is functioning correctly, run a simple test cas
        ```bash
        ls $FOAM_RUN
        ```
-2. Copy an example case:
-   - Any example case from `$FOAM_TUTORIALS` can then be copied into the run directory.
+3. Copy an example case:
+   - Any example case from '\$FOAM_TUTORIALS' can then be copied into the run directory.
      - To try the lid-driven cavity example for the incompressible fluid solver module, copy it to the run directory by typing:
         ```bash
         cd $FOAM_RUN
@@ -139,7 +139,7 @@ To ensure that your installation is functioning correctly, run a simple test cas
         ```bash
         cp -r $FOAM_TUTORIALS/incompressibleFluid/cavity .
         ```
-3. Run the example case:
+4. Run the example case:
    - Navigate to the cavity directory:
      ```bash
      cd cavity
@@ -156,17 +156,17 @@ To ensure that your installation is functioning correctly, run a simple test cas
      ```bash
      touch cavity.foam
      ```
-4. Post-process the results using **ParaView**:
+5. Post-process the results using **ParaView**:
    - To use **ParaView** on Windows with files from your `wsl` environment, you need to copy the necessary files to a location in your Windows filesystem. This step ensures **ParaView** can access these files.
      - Open the current directory in `Windows File Explorer` from the Linux terminal:
        ```bash
        explorer.exe .
        ```
-     - Copy the cavity case directory from the `wsl` directory to a location in your Windows filesystem. For example, you can copy it to your "Documents" folder on Windows. This will make it accessible to **ParaView** running on Windows.
+     - Copy the cavity case directory from the `wsl` directory to a location in your Windows filesystem. For example, you can copy it to your 'Documents' folder on Windows. This will make it accessible to **ParaView** running on Windows.
    - Launch **ParaView** on your Windows machine.
-   - Use the "File &rarr; Open" menu to navigate to the copied case files on your Windows filesystem and open the file with the extension `.foam`.
-   - After opening the `.foam` file in **ParaView**, click the "Apply" button in the "Properties" panel on the left.
-5. Here is what you should see if everything was done correctly:
+   - Use the 'File &rarr; Open' menu to navigate to the copied case files on your Windows filesystem and open the file with the extension '.foam'.
+   - After opening the '.foam' file in **ParaView**, click the 'Apply' button in the 'Properties' panel on the left.
+6. Here is what you should see if everything was done correctly:
 
    ![plot_ldc_raw](ldc_raw.png)
 
@@ -185,8 +185,8 @@ This section provides a clear guide for users who want to completely remove `wsl
      wsl --unregister Ubuntu
      ```
 2. Remove Ubuntu and Linux from Apps & Features:
-   - Press <kbd>Win+I</kbd> to open "Settings", then navigate to "Apps &rarr; Apps & Features".
-   - Search for "Ubuntu" and for "Linux" in the list, select it, and click "Uninstall".
+   - Press <kbd>Win+I</kbd> to open 'Settings', then navigate to 'Apps &rarr; Apps & Features'.
+   - Search for "Ubuntu" and for "Linux" in the list, select it, and click 'Uninstall'.
    - If "Linux" does not appear in the list, open `PowerShell` and use `winget` to find and uninstall it:
      ```bash
      winget list
@@ -195,12 +195,12 @@ This section provides a clear guide for users who want to completely remove `wsl
      winget uninstall --name "Windows Subsystem for Linux" 
      ```
 3. Uninstall WSL components:
-   - Open `PowerShell` as "Administrator".
+   - Open `PowerShell` as 'Administrator'.
    - Disable `wsl` feature:
      ```bash
      dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /norestart
      ```
-   - Disable `Virtual Machine Platform` feature:
+   - Disable 'Virtual Machine Platform' feature:
       ```bash
       dism.exe /online /disable-feature /featurename:VirtualMachinePlatform /norestart
       ```
@@ -210,7 +210,7 @@ This section provides a clear guide for users who want to completely remove `wsl
 > - Clean up component store: `dism.exe /online /cleanup-image /startcomponentcleanup`
 > - Repair system files: `dism.exe /online /cleanup-image /restorehealth`
 > - Run disk cleanup by pressing <kbd>Win+R</kbd>, typing "cleanmgr", and pressing <kbd>Enter</kbd>.
-> - Run disk optimization by searching for "Defragment and Optimize Drives".
+> - Run disk optimization by searching for 'Defragment and Optimize Drives'.
 > - Verify System Integrity: `sfc /scannow`
 
 ## Conclusion and Troubleshooting

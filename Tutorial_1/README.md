@@ -25,7 +25,7 @@ With this overview of OpenFOAM's capabilities, let's move on to the practical st
 
 ## Overview
 
-The lid-driven cavity problem is a classic benchmark test in CFD, where you simulate the flow inside a square cavity with a side length $L$. The top boundary, or lid, moves uniformly at a constant velocity $U$ in the positive x-direction, while the other sides remain stationary. This setup induces a recirculating flow pattern within the cavity, making it an excellent test case for validating numerical solvers. The problem is simple in terms of geometry and boundary conditions but presents complex flow features, such as vortices, that challenge numerical methods.
+The lid-driven cavity problem is a classic benchmark test in CFD, where you simulate the flow inside a square cavity with a side length $'L'$. The top boundary, or lid, moves uniformly at a constant velocity $'U'$ in the positive x-direction, while the other sides remain stationary. This setup induces a recirculating flow pattern within the cavity, making it an excellent test case for validating numerical solvers. The problem is simple in terms of geometry and boundary conditions but presents complex flow features, such as vortices, that challenge numerical methods.
 
 Here is a schematic of the problem:
 
