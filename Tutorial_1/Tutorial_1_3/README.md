@@ -181,7 +181,7 @@ After monitoring the simulation to ensure correct execution and convergence, the
      ```bash
      cp -r $FOAM_RUN/cavity2d /mnt/c/Users/<YourUserName>/Downloads/
      ```
-     Replace '\<YourUserName>' with your actual Windows username. This command copies the entire 'cavity2d' directory to your Windows 'Downloads' folder, making it accessible from Windows.
+     Replace '\<YourUserName>' with your actual Windows username. This command copies the entire 'cavity2d' directory to your Windows Downloads folder, making it accessible from Windows.
 2. Opening the case in **ParaView**:
    - Open **ParaView** from your Windows start menu.
    - Go to 'File &rarr; Open', and navigate to the directory where you copied the 'cavity2d' folder.
@@ -283,9 +283,14 @@ To deepen your understanding of fluid dynamics and simulation techniques, you ar
 
 ## References
 
-[https://doc.cfd.direct/openfoam/user-guide-v11/contents](https://doc.cfd.direct/openfoam/user-guide-v11/contents)   
+[https://doc.cfd.direct/openfoam/user-guide-v11/contents](https://doc.cfd.direct/openfoam/user-guide-v11/contents)  
+
 [https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow](https://www.openfoam.com/documentation/tutorial-guide/2-incompressible-flow/2.1-lid-driven-cavity-flow)
+
 [http://www.wolfdynamics.com/images/begtuts/T1_cavity_revisited.pdf](http://www.wolfdynamics.com/images/begtuts/T1_cavity_revisited.pdf)   
-[https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem](https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem)   
-[https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem](https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem)   
+
+[https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem](https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem) 
+
+[https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem](https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem)  
+ 
 [https://www.thevisualroom.com/27_openfoam_tutorials_opencfd/01_lid_driven_cavity/lid_driven_cavity.html](https://www.thevisualroom.com/27_openfoam_tutorials_opencfd/01_lid_driven_cavity/lid_driven_cavity.html)   

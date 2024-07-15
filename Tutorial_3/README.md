@@ -72,11 +72,11 @@ To learn more, check out this YouTube video on modeling the Reynolds stresses - 
 
 ## Turbulence Models
 
-Turbulence models are essential for simulating turbulent flows because they allow us to approximate the effects of turbulence without resolving every small eddy and fluctuation, which would be computationally prohibitive. Various turbulence models have been developed to close the RANS equations by providing expressions for the Reynolds stresses. Among these models, the k-$`\epsilon`$ and k-$`\omega`$ models are the most commonly used.
+Turbulence models are essential for simulating turbulent flows because they allow us to approximate the effects of turbulence without resolving every small eddy and fluctuation, which would be computationally prohibitive. Various turbulence models have been developed to close the RANS equations by providing expressions for the Reynolds stresses. Among these models, the $`k-\epsilon`$ and $`k-\omega`$ models are the most commonly used.
 
 ### k-epsilon model
 
-The k-$`\epsilon`$ model solves two transport equations for the turbulent kinetic energy ($`k`$) and its dissipation rate ($`\epsilon`$). It is robust, computationally efficient, and widely used in industrial applications due to its simplicity and reasonable accuracy for many flows. However, it assumes isotropy of turbulence, which makes it less accurate in flows with strong directional influences, strong pressure gradients or complex geometries.
+The $`k-\epsilon`$ model solves two transport equations for the turbulent kinetic energy ($`k`$) and its dissipation rate ($`\epsilon`$). It is robust, computationally efficient, and widely used in industrial applications due to its simplicity and reasonable accuracy for many flows. However, it assumes isotropy of turbulence, which makes it less accurate in flows with strong directional influences, strong pressure gradients or complex geometries.
 
 The turbulent kinetic energy is given as:
 
@@ -86,7 +86,7 @@ k = \frac{1}{2}(u'^2 + v'^2 + w'^2)
 
 where $`u'`$, $`v'`$, and $`w'`$ are the fluctiating parts of the velocity components in the $`x`$, $`y`$, and $`z`$ directions, respectively.
 
-As part of the k-$`\epsilon`$ model, $`k`$ and $`\epsilon`$ are solved from their appropriate governing equations:
+As part of the $`k-\epsilon`$ model, $`k`$ and $`\epsilon`$ are solved from their appropriate governing equations:
 
 - Transport equation for $`k`$:
 
@@ -108,15 +108,15 @@ The turbulent viscosity $`\mu_t`$ is related to the turbulent kinetic energy and
 \mu_t = C_\mu \frac{k^2}{\epsilon} 
 ```
 
-where $`C_\mu`$ is a constant derived from empirical data, usually taken as 0.09. This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the k-$`\epsilon`$ model. 
+where $`C_\mu`$ is a constant derived from empirical data, usually taken as 0.09. This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the $`k-\epsilon`$ model. 
 
-For more details, you can watch this [video lecture on the k-$`\epsilon`$ model](https://youtu.be/fOB91zQ7HJU?si=S-exGIPN52-h7Cpr).
+For more details, you can watch this [video lecture on the $`k-\epsilon`$ model](https://youtu.be/fOB91zQ7HJU?si=S-exGIPN52-h7Cpr).
 
 ### k-omega model
 
-The k-$`\omega`$ model solves for the turbulent kinetic energy ($`k`$) and the specific dissipation rate ($`\omega`$). This model is better suited for near-wall treatments and flows with adverse pressure gradients. It provides more accurate predictions in the boundary layer regions where the flow interacts with surfaces. However, it is more sensitive to initial and boundary conditions compared to the k-$`\epsilon`$ model.
+The $`k-\omega`$ model solves for the turbulent kinetic energy ($`k`$) and the specific dissipation rate ($`\omega`$). This model is better suited for near-wall treatments and flows with adverse pressure gradients. It provides more accurate predictions in the boundary layer regions where the flow interacts with surfaces. However, it is more sensitive to initial and boundary conditions compared to the $`k-\epsilon`$ model.
 
-As part of the k-$`\omega`$ model, $`k`$ and $`\omega`$ are solved from their appropriate governing equations:
+As part of the $`k-\omega`$ model, $`k`$ and $`\omega`$ are solved from their appropriate governing equations:
 
 - Transport equation for $`k`$:
 
@@ -138,15 +138,15 @@ The turbulent viscosity $`\mu_t`$ is related to the turbulent kinetic energy and
 \mu_t = \frac{k}{\omega} 
 ```
 
-This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the k-$`\omega`$ model. 
+This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the $`k-\omega`$ model. 
 
 For additional information, please refer to this [video lecture on the k-\(\omega\) model](https://youtu.be/26QaCK6wDp8?si=CpQEBDBLRVPASvdU).
 
 ### Shear Stress Transport (SST) Model
 
-The k-$`\omega`$ SST model is a hybrid model that combines the strengths of both the k-$`\epsilon`$ and k-$`\omega`$ models. It uses the k-$`\omega`$ formulation in the near-wall region, where it provides accurate boundary layer predictions, and transitions to the k-$`\epsilon`$ formulation in the free stream, where it avoids sensitivity issues. The SST model improves accuracy in predicting flow separation and handling complex boundary layers, making it a popular choice for a wide range of engineering applications.
+The $`k-\omega`$ $'SST'$ model is a hybrid model that combines the strengths of both the $`k-\epsilon`$ and $`k-\omega`$ models. It uses the $`k-\omega`$ formulation in the near-wall region, where it provides accurate boundary layer predictions, and transitions to the $`k-\epsilon`$ formulation in the free stream, where it avoids sensitivity issues. The SST model improves accuracy in predicting flow separation and handling complex boundary layers, making it a popular choice for a wide range of engineering applications.
 
-For more details, you can watch this [video on the k-$`\omega`$ $`SST`$ model](https://youtu.be/myv-ityFnS4?si=s4CX4Ng4dvpJDfyS).
+For more details, you can watch this [video on the $`k-\omega`$ $`SST`$ model](https://youtu.be/myv-ityFnS4?si=s4CX4Ng4dvpJDfyS).
 
 ## Law-of-the-Wall
 

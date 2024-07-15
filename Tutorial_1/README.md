@@ -110,5 +110,7 @@ Further validation can be achieved by comparing our results with those generated
 Having established the importance of the lid-driven cavity problem as a benchmark in validating CFD simulations, let’s now delve into how to set up and execute this case in **OpenFOAM**, providing a step-by-step guide to ensure accurate and reproducible results.
 
 ## References
+
 [https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem](https://www.comsol.com/blogs/how-to-solve-a-classic-cfd-benchmark-the-lid-driven-cavity-problem)   
+
 [https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem](https://www.cfd-online.com/Wiki/Lid-driven_cavity_problem)

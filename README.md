@@ -27,6 +27,10 @@ Welcome to the Applied Computational Fluid Dynamics (CFD) Tutorials repository. 
 
    Delve into the complexities of simulating turbulent flow over a flat plate. This tutorial covers the fundamental concepts of turbulence and the law of the wall, guides you through setting up a turbulent flow simulation in **OpenFOAM**, and instructs you on how to analyze the results using **ParaView**.
 
+5. [Tutorial 4: Flow Over a Backward-Facing Step](Tutorial_4/README.md)
+
+   This tutorial explores the flow over a backward-facing step (BFS), highlighting flow separation and reattachment phenomena. You will set up, run, and analyze a BFS simulation using **OpenFOAM**, and compare the results with experimental data.
+
 ## Getting Started
 To get started, begin with [Tutorial 0: Setting up WSL and OpenFOAM](Tutorial_0/README.md). Follow the instructions carefully to prepare your system for running **OpenFOAM** simulations. Once set up, proceed to the subsequent tutorials to deepen your understanding and skills in CFD.
 

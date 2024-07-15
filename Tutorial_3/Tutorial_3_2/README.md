@@ -59,7 +59,7 @@ We will solve this case using a steady-state solver. Let's start by finding a re
 find $FOAM_TUTORIALS/incompressibleFluid -type f | xargs grep -sl 'steady'
 ```
 
-This command will output all the tutorial files in the 'incompressibleFluid' solver directory that contain the word "steady". We will use the 'pitzDailySteady' case setup and copy it into our '$FOAM_RUN' directory with the name "turbulent_flatplate_k_w":
+This command will output all the tutorial files in the `incompressibleFluid` solver directory that contain the word 'steady'. We will use the 'pitzDailySteady' case setup and copy it into our '$FOAM_RUN' directory with the name "turbulent_flatplate_k_w":
 
 ```bash
 cp -r $FOAM_TUTORIALS/incompressibleFluid/pitzDailySteady $FOAM_RUN/turbulent_flatplate_k_w

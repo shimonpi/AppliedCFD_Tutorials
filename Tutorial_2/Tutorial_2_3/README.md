@@ -16,20 +16,20 @@ In this section, we will run the simulation, monitor its progress, and analyze t
 
 ## Running the Simulation
 
-First, generate the mesh using the "blockMesh" utility and verify the quality of the generated mesh using the "checkMesh" utility:
+First, generate the mesh using the `blockMesh` utility and verify the quality of the generated mesh using the `checkMesh` utility:
 
 ```bash
 blockMesh && checkMesh
 ```
 
-The "checkMesh" utility performs various checks on the mesh, including:
+The `checkMesh` utility performs various checks on the mesh, including:
 - Geometry checks: Ensures non-orthogonality, skewness, and aspect ratio of cells are within acceptable limits.
 - Topology checks: Confirms connectivity and boundary definitions.
 - Additional quality checks: Checks for non-positive volumes and other potential issues.
 
 Review the output to ensure there are no critical errors. Address any warnings or errors related to mesh quality before proceeding.
 
-Start the simulation using the "foamRun" command:
+Start the simulation using the 'foamRun' command:
 
 ```bash
 foamRun > log &
@@ -43,19 +43,19 @@ tail -f log
 
 Press <kbd> Ctrl+C </kbd> to exit the log viewer once the simulation completes.
 
-To visualize the residuals and ensure convergence, process the "log" file using "foamLog":
+To visualize the residuals and ensure convergence, process the 'log' file using 'foamLog':
 
 ```bash
 foamLog log
 ```
 
-This command creates a directory named "logs" containing files for each quantity's residuals and other metrics.
+This command creates a directory named 'logs' containing files for each quantity's residuals and other metrics.
 
-For instructions on creating the 'Gnuplot' script to plot the residuals, refer to the residuals plotting section in the previous tutorial.
+For instructions on creating the Gnuplot script to plot the residuals, refer to the residuals plotting section in the previous tutorial.
 
 ## Post-Process Wall Shear Stress
 
-The "[foamPostProcess](https://doc.cfd.direct/openfoam/user-guide-v11/post-processing-functionality)" utility provides various post-processing functionalities to analyze simulation results. Some common functionalities include:
+The `foamPostProcess` ([documentation](https://doc.cfd.direct/openfoam/user-guide-v11/post-processing-functionality)) utility provides various post-processing functionalities to analyze simulation results. Some common functionalities include:
 - Field data extraction: Extracting specific fields (e.g., velocity, pressure) at different locations or times.
 - Derived quantities: Calculating derived quantities like vorticity, shear stress, and turbulence quantities.
 - Data conversion: Converting data formats for compatibility with different visualization tools.
@@ -71,7 +71,7 @@ The wall shear stress is an important parameter in boundary layer analysis, repr
 
 ## Visualizing Results
 
-1. Create a ".foam" file to enable visualization in **ParaView**:
+1. Create a '.foam' file to enable visualization in **ParaView**:
 
    ```bash
    touch plate.foam
@@ -80,14 +80,14 @@ The wall shear stress is an important parameter in boundary layer analysis, repr
 2. Transfer the simulation data to your Windows system for visualization by using the following command:
   
    ```bash
-   cp -r $FOAM_RUN/laminar_flatplate /mnt/c/Users/YourUserName/Downloads/
+   cp -r $FOAM_RUN/laminar_flatplate /mnt/c/Users/<YourUserName>/Downloads/
    ```
 
-   Replace "YourUserName" with your actual Windows username.
+   Replace '\<YourUserName>' with your actual Windows username.
 
 3. Visualizing the results in **ParaView**:
-   - Open **ParaView** from your Windows start menu and load "plate.foam" file.
-   - Visualize "U_x" and mesh edges.
+   - Open **ParaView** from your Windows start menu and load 'plate.foam' file.
+   - Visualize 'U_x' and mesh edges.
 
 Here is what you should see if everything is done correctly:
 
@@ -96,7 +96,7 @@ Here is what you should see if everything is done correctly:
 The mesh is significantly refined near the bottom boundary, where the no-slip wall is located. The fine mesh near the wall will help in resolving the velocity and shear stress profiles within the boundary layer. The vertical grading helps in transitioning from a fine mesh near the wall to a coarser mesh away from it, reducing the total number of cells while maintaining accuracy where needed. The cells near the wall have a high aspect ratio (they are much longer in the x-direction than in the y-direction). This is appropriate for boundary layer simulations where the velocity changes rapidly in the y-direction but more gradually in the x-direction. However, care must be taken to ensure that the aspect ratio is not too extreme, as it can affect numerical stability and accuracy.
 
 4. To analyze the boundary layer development, plot the velocity profile $`U_x`$ at $`x = 0.1`$. 
-   - Use the "Plot Over Line" filter:
+   - Use the 'Plot Over Line' filter:
      - Sampling Pattern: Sample At Segment Centers
      - Point1: (0.1, 0.0, 0.05)
      - Point2: (0.1, 0.1, 0.05)
@@ -110,13 +110,13 @@ The mesh is significantly refined near the bottom boundary, where the no-slip wa
 ![Ux-solution](Ux-solution.png)
 
 5. Calculate and plot the skin friction coefficient ($`C_f`$).
-   - Go to the toolbar and click on the "Calculator" button.
+   - Go to the toolbar and click on the 'Calculator' button.
      
 ![calculator](calculator.png)
-  - In the "Calculator" properties panel, which appears after selecting the tool, use the following expression:
+  - In the 'Calculator' properties panel, which appears after selecting the tool, use the following expression:
     
 ![calculator_panel](calculator_panel.png)  
-  - Use the "Plot Over Line" filter to plot $`C_f`$:
+  - Use the 'Plot Over Line' filter to plot $`C_f`$:
     - Sampling Pattern: Sample At Segment Centers
     - Point1: (0.0, 0.0, 0.05)
     - Point2: (0.5, 0.0, 0.05)
@@ -146,8 +146,9 @@ Expected Outcomes:
 - Ensure that the pressure drop along the pipe length is consistent with theoretical predictions for $`Re = 100`$.
 
 ## References
+
 [https://su2code.github.io/tutorials/Laminar_Flat_Plate/](https://su2code.github.io/tutorials/Laminar_Flat_Plate/)   
+
 [https://openfoamwiki.net/index.php/Blasius_Flat-Plate_Flow_Benchmark](https://openfoamwiki.net/index.php/Blasius_Flat-Plate_Flow_Benchmark)
+
 [https://cfdmonkey.com/verification-of-flow-over-a-flat-plate-in-openfoam/](https://cfdmonkey.com/verification-of-flow-over-a-flat-plate-in-openfoam/)
-
-

@@ -221,6 +221,8 @@ Happy computing!
 
 ## References
 
-[https://openfoam.org/download/windows/](https://openfoam.org/download/windows/)   
+[https://openfoam.org/download/windows/](https://openfoam.org/download/windows/) 
+
 [https://openfoam.org/download/11-ubuntu/#getting-started](https://openfoam.org/download/11-ubuntu/#getting-started)   
+
 [https://doc.cfd.direct/openfoam/user-guide-v11/tutorials](https://doc.cfd.direct/openfoam/user-guide-v11/tutorials)
