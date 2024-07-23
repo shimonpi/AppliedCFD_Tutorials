@@ -132,14 +132,11 @@ bash ./Lastpost
 
 In this exploratory exercise, you will experiment with different configurations and parameters to deepen your understanding of the solver and the simulation process.
 
-1. Change the solver to unsteady.
-   - Modify the simulation to run in an unsteady (transient) mode, similar to the cavity and laminar flat plate cases you worked on earlier.
-   - Adjust the time step size and end time to reflect an unsteady simulation.
-2. Try different mesh sizes.
-3. Try Different Turbulence Models.
+1. Try different mesh sizes.
+2. Try Different Turbulence Models.
    - Experiment with different turbulence models such as the Spalart-Allmaras model.
    - For guidance, refer to this example: [github.com/khamlajt1/Flow-Over-a-Flat-Plate](https://github.com/khamlajt1/Flow-Over-a-Flat-Plate).
-4. Reconstruct the law-of-the-wall profile.
+3. Reconstruct the law-of-the-wall profile.
    - Once you have identified the configuration that gives the best results, extract the velocity data along a line from (1 0 0.05) to (1 1 0.05).
    - Save the data by going to 'File &rarr; Save Data' and choosing CSV as the format.
    - In your prefered software, edit the data and normalize the velocity and distance from the wall as elaborated in Tutorial 3.1 to reconstruct the law-of-the-wall profile.

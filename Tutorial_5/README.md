@@ -335,7 +335,7 @@ forces
 }
 ```
 
-The 'patches' parameter lists the patches over which the forces are calculated, with 'cylinder' being the relevant patch for this case. The 'rho' parameter indicates the flow type, set to 'rhoInf' for incompressible flow. The 'rhoInf' parameter, redundant for incompressible flows, is set to 1.0. The 'liftDir' and 'dragDir' parameters specify the directions of the lift and drag forces, set to $'(0 1 0)'$ for the y-direction and $`(1 0 0)`$ for the x-direction, respectively. The 'CofR' parameter defines the center of rotation at $`(0 0 0)`$, and the 'pitchAxis' specifies the axis about which the pitching moment is calculated, set to $`(0 0 1)`$. The 'magUInf' parameter indicates the magnitude of the free-stream velocity, set to 1.0, while the 'lRef' and 'Aref' parameters define the reference length and reference area, set to 1.0 and 2.0, respectively. 
+The 'patches' parameter lists the patches over which the forces are calculated, with 'cylinder' being the relevant patch for this case. The 'rho' parameter indicates the flow type, set to 'rhoInf' for incompressible flow. The 'rhoInf' parameter, redundant for incompressible flows, is set to 1.0. The 'liftDir' and 'dragDir' parameters specify the directions of the lift and drag forces, set to (0 1 0) for the y-direction and (1 0 0) for the x-direction, respectively. The 'CofR' parameter defines the center of rotation at (0 0 0), and the 'pitchAxis' specifies the axis about which the pitching moment is calculated, set to (0 0 1). The 'magUInf' parameter indicates the magnitude of the free-stream velocity, set to 1.0, while the 'lRef' and 'Aref' parameters define the reference length and reference area, set to 1.0 and 2.0, respectively. 
 
 ## Running the Case 
 
