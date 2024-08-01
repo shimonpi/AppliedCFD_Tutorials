@@ -37,7 +37,7 @@ Welcome to the Applied Computational Fluid Dynamics (CFD) Tutorials repository. 
 
 6. Tutorial 6: Flow Over NACA0012 Airfoil
    - [Tutorial 6.1 – NASA-Provided Mesh Analysis for NACA0012 Airfoil Flow](Tutorial_6/README.md)
-   - [Tutorial 6.2 - Custom Mesh Generation for NACA0012 Airfoil Using SnappyHexMesh](Tutorial_6_2/README.md)
+   - [Tutorial 6.2 - Custom Mesh Generation for NACA0012 Airfoil Using SnappyHexMesh](Tutorial_6/Tutorial_6_2/README.md)
 
    Explore the aerodynamic characteristics of the NACA0012 airfoil using two approaches. The first sub-tutorial utilizes NASA's provided geometry and mesh to set up and simulate flow over the airfoil. The second sub-tutorial introduces `snappyHexMesh`, a tool within **OpenFOAM** for generating custom meshes. You will compare both approaches, validating your findings against NASA's experimental data.
 

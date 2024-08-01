@@ -313,7 +313,7 @@ Let's discuss each part of this configuration in detail.
    The refinement level is defined such that the local grid size is made smaller according to the following equation:
 
     ```math
-    local_grid_size = \frac{base_grid_size}{2^{refinement_level}}
+    local grid size = \frac{base grid size}{2^{refinement level}}
     ```
 
 1. The 'refinementSurfaces' entry defines the refinement levels for the geometry surfaces:
