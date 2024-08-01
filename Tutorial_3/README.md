@@ -21,7 +21,7 @@
 
 In this tutorial, we will explore the dynamics of turbulent flow over a flat plate. Building on the principles of laminar flow discussed in previous tutorials, we will delve into the intricacies of turbulence, which is a common phenomenon in many engineering applications such as aerospace, automotive, and environmental engineering. 
 
-Turbulence, characterized by chaotic and stochastic property changes in fluid flow, is a complex phenomenon but can be analyzed using various models. We will particularly focus on the k-epsilon (k-$`\epsilon`$) and k-omega (k-$`\omega`$) turbulence models, which are widely used in CFD for their robustness and accuracy. Additionally, we will discuss the law-of-the-wall, a fundamental concept in turbulence modeling near walls.
+Turbulence, characterized by chaotic and stochastic property changes in fluid flow, is a complex phenomenon but can be analyzed using various models. We will particularly focus on the k-epsilon $`k - \epsilon`$ and k-omega (k - $`\omega`$) turbulence models, which are widely used in CFD for their robustness and accuracy. Additionally, we will discuss the law-of-the-wall, a fundamental concept in turbulence modeling near walls.
 
 ## Overview
 
@@ -72,11 +72,11 @@ To learn more, check out this YouTube video on modeling the Reynolds stresses - 
 
 ## Turbulence Models
 
-Turbulence models are essential for simulating turbulent flows because they allow us to approximate the effects of turbulence without resolving every small eddy and fluctuation, which would be computationally prohibitive. Various turbulence models have been developed to close the RANS equations by providing expressions for the Reynolds stresses. Among these models, the $`k-\epsilon`$ and $`k-\omega`$ models are the most commonly used.
+Turbulence models are essential for simulating turbulent flows because they allow us to approximate the effects of turbulence without resolving every small eddy and fluctuation, which would be computationally prohibitive. Various turbulence models have been developed to close the RANS equations by providing expressions for the Reynolds stresses. Among these models, the $`k - \epsilon`$ and $`k - \omega`$ models are the most commonly used.
 
 ### k-epsilon model
 
-The $`k-\epsilon`$ model solves two transport equations for the turbulent kinetic energy ($`k`$) and its dissipation rate ($`\epsilon`$). It is robust, computationally efficient, and widely used in industrial applications due to its simplicity and reasonable accuracy for many flows. However, it assumes isotropy of turbulence, which makes it less accurate in flows with strong directional influences, strong pressure gradients or complex geometries.
+The $`k - \epsilon`$ model solves two transport equations for the turbulent kinetic energy ($`k`$) and its dissipation rate ($`\epsilon`$). It is robust, computationally efficient, and widely used in industrial applications due to its simplicity and reasonable accuracy for many flows. However, it assumes isotropy of turbulence, which makes it less accurate in flows with strong directional influences, strong pressure gradients or complex geometries.
 
 The turbulent kinetic energy is given as:
 
@@ -86,7 +86,7 @@ k = \frac{1}{2}(u'^2 + v'^2 + w'^2)
 
 where $`u'`$, $`v'`$, and $`w'`$ are the fluctiating parts of the velocity components in the $`x`$, $`y`$, and $`z`$ directions, respectively.
 
-As part of the $`k-\epsilon`$ model, $`k`$ and $`\epsilon`$ are solved from their appropriate governing equations:
+As part of the $`k - \epsilon`$ model, $`k`$ and $`\epsilon`$ are solved from their appropriate governing equations:
 
 - Transport equation for $`k`$:
 
@@ -100,7 +100,7 @@ As part of the $`k-\epsilon`$ model, $`k`$ and $`\epsilon`$ are solved from thei
 \frac{\partial \epsilon}{\partial t} + \overline{u_j} \frac{\partial \epsilon}{\partial x_j} = C_{\epsilon1} \frac{\epsilon}{k} P_k - C_{\epsilon2} \frac{\epsilon^2}{k} + \frac{\partial}{\partial x_j} \left( \left( \nu + \frac{\nu_t}{\sigma_\epsilon} \right) \frac{\partial \epsilon}{\partial x_j} \right) 
 ```
 
-  where $`P_k`$ is the production of turbulent kinetic energy, $`\nu`$ is the kinematic viscosity, $`\nu_t`$ is the turbulent viscosity, and $`C_{\epsilon1}`$, $`C_{\epsilon2}`$, $`\sigma_k`$, and $`\sigma_\epsilon`$ are empirical constants.
+  where $`P_k`$ is the production of turbulent kinetic energy, $`\nu`$ is the kinematic viscosity, $`\nu_t`$ is the turbulent viscosity, and $`C_{\epsilon1}`$, $`C_{\epsilon2}`$, $`\sigma_k`$, and $`\sigma_{\epsilon}`$ are empirical constants.
 
 The turbulent viscosity $`\mu_t`$ is related to the turbulent kinetic energy and dissipation rate by:
 
@@ -108,15 +108,15 @@ The turbulent viscosity $`\mu_t`$ is related to the turbulent kinetic energy and
 \mu_t = C_\mu \frac{k^2}{\epsilon} 
 ```
 
-where $`C_\mu`$ is a constant derived from empirical data, usually taken as 0.09. This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the $`k-\epsilon`$ model. 
+where $`C_\mu`$ is a constant derived from empirical data, usually taken as 0.09. This relationship helps in closing the equations and calculating the Reynolds stresses, thus allowing for the effective simulation of turbulent flows using the $`k - \epsilon`$ model. 
 
 For more details, you can watch this [video lecture on the $`k-\epsilon`$ model](https://youtu.be/fOB91zQ7HJU?si=S-exGIPN52-h7Cpr).
 
 ### k-omega model
 
-The $`k-\omega`$ model solves for the turbulent kinetic energy ($`k`$) and the specific dissipation rate ($`\omega`$). This model is better suited for near-wall treatments and flows with adverse pressure gradients. It provides more accurate predictions in the boundary layer regions where the flow interacts with surfaces. However, it is more sensitive to initial and boundary conditions compared to the $`k-\epsilon`$ model.
+The $`k - \omega`$ model solves for the turbulent kinetic energy ($`k`$) and the specific dissipation rate ($`\omega`$). This model is better suited for near-wall treatments and flows with adverse pressure gradients. It provides more accurate predictions in the boundary layer regions where the flow interacts with surfaces. However, it is more sensitive to initial and boundary conditions compared to the $`k - \epsilon`$ model.
 
-As part of the $`k-\omega`$ model, $`k`$ and $`\omega`$ are solved from their appropriate governing equations:
+As part of the $`k - \omega`$ model, $`k`$ and $`\omega`$ are solved from their appropriate governing equations:
 
 - Transport equation for $`k`$:
 
@@ -144,9 +144,9 @@ For additional information, please refer to this [video lecture on the k-\(\omeg
 
 ### Shear Stress Transport (SST) Model
 
-The $`k-\omega`$ $'SST'$ model is a hybrid model that combines the strengths of both the $`k-\epsilon`$ and $`k-\omega`$ models. It uses the $`k-\omega`$ formulation in the near-wall region, where it provides accurate boundary layer predictions, and transitions to the $`k-\epsilon`$ formulation in the free stream, where it avoids sensitivity issues. The SST model improves accuracy in predicting flow separation and handling complex boundary layers, making it a popular choice for a wide range of engineering applications.
+The $`k - \omega`$ **SST** model is a hybrid model that combines the strengths of both the $`k - \epsilon`$ and $`k - \omega`$ models. It uses the $`k - \omega`$ formulation in the near-wall region, where it provides accurate boundary layer predictions, and transitions to the $`k - \epsilon`$ formulation in the free stream, where it avoids sensitivity issues. The SST model improves accuracy in predicting flow separation and handling complex boundary layers, making it a popular choice for a wide range of engineering applications.
 
-For more details, you can watch this [video on the $`k-\omega`$ $`SST`$ model](https://youtu.be/myv-ityFnS4?si=s4CX4Ng4dvpJDfyS).
+For more details, you can watch this [video on the k-omega SST model](https://youtu.be/myv-ityFnS4?si=s4CX4Ng4dvpJDfyS).
 
 ## Law-of-the-Wall
 

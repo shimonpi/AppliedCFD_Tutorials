@@ -30,8 +30,8 @@ Here are the detailed geometric and flow conditions:
 - The air properties are:
   - Density: $`\rho = 1.225 \frac{kg}{m^3}`$
   - Dynamic viscosity: $`\mu = 1.7894e^{-5} \frac{kg}{m \cdot s}`$
-- At the leading edge of the plate ($`x = 0`$), the boundary layer thickness is theoretically zero as the flow begins to interact with the plate surface.
-- The no-slip condition applies, meaning the velocity of the air directly contacting the plate is zero ($`u = 0`$ at $`y = 0`$). This is a fundamental condition for the development of the boundary layer.
+- At the leading edge of the plate (x = 0), the boundary layer thickness is theoretically zero as the flow begins to interact with the plate surface.
+- The no-slip condition applies, meaning the velocity of the air directly contacting the plate is zero (u = 0 at y = 0). This is a fundamental condition for the development of the boundary layer.
 - At a height sufficiently far from the surface, the velocity of the air matches the free stream velocity ($`U_\infty`$), indicating that the effects of the plate on the airflow have diminished.
 - The setup assumes symmetry along the centerline of the plate to focus solely on the flow dynamics above the plate, without interference from edges or three-dimensional effects. This assumption simplifies the analysis and is typical in theoretical studies to isolate the effects of boundary layer development.
 
@@ -64,7 +64,7 @@ The Blasius solution begins by introducing a similarity variable $`\eta`$, which
 \eta = y \sqrt{\frac{U_\infty}{\nu x}}
 ``` 
 
-where $`y`$ is the normal distance from the plate, $`U_\infty`$ is the free stream velocity, $`nu`$ is the kinematic viscosity, and $`x`$ is the distance along the plate from the leading edge.
+where $`y`$ is the normal distance from the plate, $`U_\infty`$ is the free stream velocity, $`\nu`$ is the kinematic viscosity, and $`x`$ is the distance along the plate from the leading edge.
 
 The stream function $`\Psi`$ is related to the velocity components as:
 

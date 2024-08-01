@@ -51,7 +51,7 @@ rm -rf 0/epsilon 0/k 0/nut 0/nuTilda 0/omega
 
 Next, we need to define the boundary conditions for the flat plate simulation. We will set up an inlet, outlet, and specify the wall boundaries. An inlet boundary is needed to specify the flow entering the domain, and an outlet boundary is needed to allow the flow to exit the domain. A slip condition is defined at the top to avoid wall effects, simulating an unbounded flow. Initially, a slip condition is defined near the inlet to prevent edge effects, and the no-slip wall is defined further downstream to represent the physical plate where boundary layer development occurs. An empty boundary condition is set for the front and back faces, indicating a two-dimensional simulation.
 
-Edit the '0/U' file to define the velocity boundary conditions, and change the internal field to $`(1 0 0)`$ for faster initialization and convergence of the solution:
+Edit the '0/U' file to define the velocity boundary conditions, and change the internal field to (1 0 0) for faster initialization and convergence of the solution:
 
 ```bash
 gedit 0/U
@@ -98,7 +98,7 @@ boundaryField
 }
 ```
 
-At the inlet, we use the 'freestreamVelocity' condition to specify the uniform flow entering the domain. This condition helps to maintain a consistent velocity profile and avoid disturbances. At the outlet, we use the 'inletOutlet' condition to handle outflow while allowing for potential inflow if the flow reverses. This ensures that the outlet boundary can adapt to varying flow conditions. The 'phi' indicates the flux field used to determine the direction of flow, 'inletValue' is the value applied if the boundary switches to an inlet (typically zero for no inflow), and 'value' is the initial condition for the velocity at the outlet. This is set to uniform $`(1 0 0)`$ to match the freestream velocity, ensuring consistency in flow direction.
+At the inlet, we use the 'freestreamVelocity' condition to specify the uniform flow entering the domain. This condition helps to maintain a consistent velocity profile and avoid disturbances. At the outlet, we use the 'inletOutlet' condition to handle outflow while allowing for potential inflow if the flow reverses. This ensures that the outlet boundary can adapt to varying flow conditions. The 'phi' indicates the flux field used to determine the direction of flow, 'inletValue' is the value applied if the boundary switches to an inlet (typically zero for no inflow), and 'value' is the initial condition for the velocity at the outlet. This is set to uniform (1 0 0) to match the freestream velocity, ensuring consistency in flow direction.
 
 For the pressure field, we will use the 'freestreamPressure' condition for both the inlet and outlet to maintain consistent pressure levels and stabilize flow. A 'zeroGradient' condition is used for the no-slip wall to ensure no normal pressure gradient at the wall, while a similar condition is applied for the slip wall since there is no normal pressure gradient expected.
 
@@ -168,7 +168,7 @@ Make sure to remove all lines related to Reynolds-Averaged Navier-Stokes (RAS) m
 To accurately capture the boundary layer development over the flat plate, the mesh must be fine enough near the wall where the gradients are highest. However, using a uniformly fine mesh throughout the entire domain is impractical due to computational constraints. Instead, we employ a non-uniform mesh using 'simpleGrading' to refine the mesh where necessary while keeping it coarser elsewhere.
 
 ### Understanding simpleGrading
-The 'simpleGrading' method is used in **OpenFOAM**'s `blockMesh` utility to specify non-uniform cell sizes within a block. It allows for mesh refinement in specified directions. The grading is defined by a ratio that specifies how cell sizes change from one side of the block to the other. 
+The simpleGrading method is used in **OpenFOAM**'s `blockMesh` utility to specify non-uniform cell sizes within a block. It allows for mesh refinement in specified directions. The grading is defined by a ratio that specifies how cell sizes change from one side of the block to the other. 
 
 From the **OpenFOAM** [user guide](https://doc.cfd.direct/openfoam/user-guide-v11/blockmesh):
 A 'simpleGrading' entry has the form (gx gy gz), where 'gx' is the grading in the x-direction, 'gy' is the grading in the y-direction, 'gz' is the grading in the z-direction. A grading value greater than one means cells will get progressively larger. A grading value less than one means cells will get progressively smaller. A grading value of one means uniform cell sizes.
@@ -305,7 +305,7 @@ mergePatchPairs
 );
 ```
 
-In this example, the first block $`(0 1 4 3 9 10 13 12)`$ refines the mesh near the inlet and the slip wall with a grading ratio of '1' in the x-direction and '50' in the y-direction to ensure finer cells near the wall and gradually larger cells away from the wall. The second block $`(1 2 5 4 10 11 14 13)`$ refines the mesh near the no-slip wall and transitions to the outlet with similar grading. The third and fourth blocks handle the upper part of the domain, transitioning smoothly to a coarser mesh farther away from the wall. 
+In this example, the first block (0 1 4 3 9 10 13 12) refines the mesh near the inlet and the slip wall with a grading ratio of '1' in the x-direction and '50' in the y-direction to ensure finer cells near the wall and gradually larger cells away from the wall. The second block (1 2 5 4 10 11 14 13) refines the mesh near the no-slip wall and transitions to the outlet with similar grading. The third and fourth blocks handle the upper part of the domain, transitioning smoothly to a coarser mesh farther away from the wall. 
 
 By following this mesh setup, we ensure that the boundary layer is accurately captured while maintaining a manageable number of cells in the overall domain. This setup balances computational efficiency with the need for precision in resolving the flow near the flat plate.
 

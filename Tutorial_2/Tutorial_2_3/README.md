@@ -95,7 +95,7 @@ Here is what you should see if everything is done correctly:
 
 The mesh is significantly refined near the bottom boundary, where the no-slip wall is located. The fine mesh near the wall will help in resolving the velocity and shear stress profiles within the boundary layer. The vertical grading helps in transitioning from a fine mesh near the wall to a coarser mesh away from it, reducing the total number of cells while maintaining accuracy where needed. The cells near the wall have a high aspect ratio (they are much longer in the x-direction than in the y-direction). This is appropriate for boundary layer simulations where the velocity changes rapidly in the y-direction but more gradually in the x-direction. However, care must be taken to ensure that the aspect ratio is not too extreme, as it can affect numerical stability and accuracy.
 
-4. To analyze the boundary layer development, plot the velocity profile $`U_x`$ at $`x = 0.1`$. 
+4. To analyze the boundary layer development, plot the velocity profile $`U_x`$ at x = 0.1. 
    - Use the 'Plot Over Line' filter:
      - Sampling Pattern: Sample At Segment Centers
      - Point1: (0.1, 0.0, 0.05)
@@ -143,7 +143,7 @@ Steps to follow:
   
 Expected Outcomes:
 - Verify that the velocity profile matches the parabolic profile predicted by the Hagen-Poiseuille equation.
-- Ensure that the pressure drop along the pipe length is consistent with theoretical predictions for $`Re = 100`$.
+- Ensure that the pressure drop along the pipe length is consistent with theoretical predictions for Re = 100.
 
 ## References
 

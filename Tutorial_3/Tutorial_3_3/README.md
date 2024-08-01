@@ -139,7 +139,7 @@ In this exploratory exercise, you will experiment with different configurations 
 3. Reconstruct the law-of-the-wall profile.
    - Once you have identified the configuration that gives the best results, extract the velocity data along a line from (1 0 0.05) to (1 1 0.05).
    - Save the data by going to 'File &rarr; Save Data' and choosing CSV as the format.
-   - In your prefered software, edit the data and normalize the velocity and distance from the wall as elaborated in Tutorial 3.1 to reconstruct the law-of-the-wall profile.
+   - In your prefered software, edit the data and normalize the velocity and distance from the wall as elaborated in [Tutorial 3.1](../../Tutorial_3/README.md) to reconstruct the law-of-the-wall profile.
    - Plot the normalized velocity ($`U^+`$) against the normalized distance ($`y^+`$) to compare with the theoretical models for the different regions of the law-of-the-wall profile.
 
 ## References

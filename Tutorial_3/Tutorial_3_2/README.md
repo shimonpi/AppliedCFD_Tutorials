@@ -18,7 +18,7 @@ The case we will work on is NASA's 2D zero pressure gradient flat plate case pro
 
 The plate is 2 meters in length, which is sufficient to observe the full development of the boundary layer from its initiation at the leading edge to a fully developed turbulent state. The width of the plate is considered infinite for the purpose of this two-dimensional study, eliminating side effects. However, it's important to note that turbulence is inherently a three-dimensional phenomenon, and working in 2D will inevitably result in some error. That said, we will work within the framework of RANS, which is more forgiving to this assumption.
 
-A fluid flows over the plate at $`M = 0.2`$ and with a temperature of 300 K. Under ideal gas assumption, the inlet velocity is thus $`U_\infty = 69.44 \frac{m}{s}`$. The Reynolds number ($`Re`$) per unit length of 1 is given as 5 million, so the kinematic viscosity is:
+A fluid flows over the plate at $`M = 0.2`$ and with a temperature of 300 K. Under ideal gas assumption, the inlet velocity is thus $`U_\infty = 69.44 \frac{m}{s}`$. The Reynolds number (Re) per unit length of 1 is given as 5 million, so the kinematic viscosity is:
 
 ```math
 \nu = 1.389\times10^{-5} \frac{m^2}{s}
@@ -34,10 +34,10 @@ k_{far-field} = 9\times10^{-9}(\frac{U_\infty}{M})^2 = 1.085\times10^{-3} \frac{
 \omega_{far-field} = 1\times10^{-6}\frac{1}{\nu}(\frac{U_\infty}{M})^2 = 8679.7 \frac{1}{s}
 ```
 
-The freestream turbulent eddy viscosity is given as $`mu_t/\mu_{\infty} = 0.009`$, thus:
+The freestream turbulent eddy viscosity is given as $`\mu_t/\mu_{\infty} = 0.009`$, thus:
 
 ```math
-\nu = 1.25\times10^{-7}
+\nu_t = 1.25\times10^{-7} \frac{m^2}{s}
 ```
 
 Here is a schematic of the problem:

@@ -287,7 +287,7 @@ We simulate a laminar case, so we only need to define the boundary and initial c
 
 ## Modify the Physical Properties
 
-Change the kinematic viscosity ($`\nu`$) to match the desired turbulent flow conditions. Our uniform inlet velocity is $`1 \frac{m}{s}`$, the cylinder diameter is $`2 m`$ and the desired Reynolds number is $`Re = 20`$, thus the kinematic viscosity is $`\nu = 0.1`$
+Change the kinematic viscosity ($`\nu`$) to match the desired turbulent flow conditions. Our uniform inlet velocity is $`1 \frac{m}{s}`$, the cylinder diameter is 2 m and the desired Reynolds number is Re = 20, thus the kinematic viscosity is $`\nu = 0.1`$
 
 Edit the 'constant/physicalProperties' file:
 
@@ -430,13 +430,13 @@ bash ./Allpost
 
 ## Visualizing the Results
 
-We can visualize the solution for the flow over the cylinder at $`Re = 20`$ as we did in all previous tutorials and obtain the following streamline pattern:
+We can visualize the solution for the flow over the cylinder at Re = 20 as we did in all previous tutorials and obtain the following streamline pattern:
 
 ![vortex_shedding_Re20_slice_streamline](vortex_shedding_Re20_slice_streamline.png)
 
-To observe the effects of a higher Reynolds number, we can increase the Reynolds number to $`Re = 200`$ by changing the kinematic viscosity to $`\nu = 0.01`$ and re-running the simulation. After making this adjustment, the resulting flow pattern will show more complex vortex shedding characteristics. 
+To observe the effects of a higher Reynolds number, we can increase the Reynolds number to Re = 200 by changing the kinematic viscosity to $`\nu = 0.01`$ and re-running the simulation. After making this adjustment, the resulting flow pattern will show more complex vortex shedding characteristics. 
 
-The visualization for $`Re = 200`$ is illustrated below:
+The visualization for Re = 200 is illustrated below:
 
 ![vortex_shedding_Re200](vortex_shedding_Re200_slice.gif)
 
@@ -455,7 +455,7 @@ As part of the tutorial, Wolf Dynamics gathered experimental and numerical resul
 
 Now, let's compare these results to ours.
 
-For $`Re = 20`$, the flow is steady, so we can simply check the file 'postProcessing/forces/0/forceCoeffs.dat' and take the results from the last line:
+For Re = 20, the flow is steady, so we can simply check the file 'postProcessing/forces/0/forceCoeffs.dat' and take the results from the last line:
 
 ```cpp
 # Time        	Cm            	Cd            	Cl            
@@ -464,7 +464,7 @@ For $`Re = 20`$, the flow is steady, so we can simply check the file 'postProces
 
 As you can see, the results are in the correct range. 
 
-For $`Re = 200`$, the flow is unsteady, so let's plot the lift and drag coefficients using the following Gnuplot script:
+For Re = 200, the flow is unsteady, so let's plot the lift and drag coefficients using the following Gnuplot script:
 
 ```c
 set terminal pngcairo size 800,600 enhanced font 'Verdana,12'
