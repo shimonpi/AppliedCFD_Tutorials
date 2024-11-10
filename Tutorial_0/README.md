@@ -17,7 +17,7 @@ In this tutorial, you will learn how to install the "Windows Subsystem for Linux
 
 By following these steps, you will prepare your computer to use **OpenFOAM** for our upcoming simulations. Each step includes detailed instructions to make the installation process as smooth as possible, especially if you are new to working with Linux and terminal commands. 
 
-We will be using the '.org' version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The '.org' version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the '.com' version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root, but for our educational purposes, the '.org' version is more suitable due to its open access and extensive community support.
+We will be using the '.org' version of **OpenFOAM**, maintained by the [OpenFOAM Foundation](https://openfoam.org/). The '.org' version focuses on community-driven development and maintaining a consistent open-source philosophy. In contrast, the '.com' version, maintained by [OpenCFD Ltd](https://www.openfoam.com/), is more commercially oriented and includes proprietary features. Both versions share a common root.
 
 > [!IMPORTANT]
 > This guide is intended for Windows users. If you are using macOS, please refer to the [OpenFOAM installation guide for macOS](https://openfoam.org/download/11-macos/).
@@ -25,7 +25,7 @@ We will be using the '.org' version of **OpenFOAM**, maintained by the [OpenFOAM
 ## Setup
 
 ### Step 1: Installing WSL
-Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Windows users to run a Linux environment directly on Windows, without the overhead of a traditional virtual machine.
+Before you can run **OpenFOAM**, you’ll need to install `wsl` which allows Windows users to run a Linux environment directly on Windows.
 
 1. Open `PowerShell` as 'Administrator':
    - Right-click on the 'Start' button and select 'Windows PowerShell (Admin)'.
@@ -157,14 +157,15 @@ To ensure that your installation is functioning correctly, run a simple test cas
      touch cavity.foam
      ```
 5. Post-process the results using **ParaView**:
-   - To use **ParaView** on Windows with files from your `wsl` environment, you need to copy the necessary files to a location in your Windows filesystem. This step ensures **ParaView** can access these files.
+   - To use **ParaView** on Windows with files from your `wsl` environment, you need to copy the necessary files to a location in your Windows filesystem. This step ensures **ParaView** can access these files. 
      - Open the current directory in `Windows File Explorer` from the Linux terminal:
        ```bash
        explorer.exe .
        ```
      - Copy the cavity case directory from the `wsl` directory to a location in your Windows filesystem. For example, you can copy it to your 'Documents' folder on Windows. This will make it accessible to **ParaView** running on Windows.
+   - Alternatively, you can copy the 'wsl.localhost' address of the case directory and paste it directly into the 'Open' menu in **ParaView**.
    - Launch **ParaView** on your Windows machine.
-   - Use the 'File &rarr; Open' menu to navigate to the copied case files on your Windows filesystem and open the file with the extension '.foam'.
+   - Use the 'File &rarr; Open' menu to navigate to the copied case files on your Windows filesystem or the 'wsl.localhost' address, and open the file with the extension '.foam'.
    - After opening the '.foam' file in **ParaView**, click the 'Apply' button in the 'Properties' panel on the left.
 6. Here is what you should see if everything was done correctly:
 
